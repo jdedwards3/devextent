@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- head -->
+  <%- include(config.folders.layouts.path + '/partials/head'); -%>
+  <body>
+    <!-- main -->
+    <div class="grid-wrapper full-width">
+      <main id="main">
+        <article>
+          <!-- image -->
+          <% if (model.image) { %>
+          <img
+            class="post-image"
+            alt="<%= model.imageAlt %>"
+            src="/images/<%= model.image %>"
+          />
+          <% } %>
+          <!-- content -->
+          <% if (model.title && model.guid) { %>
+          <div
+            class="article-content-wrapper <%= model.image ? 'has-image' : '' %>"
+          >
+            <% } %>
+            <!-- title -->
+            <% if (model.title) { %>
+            <h1 class=""><%= model.title %></h1>
+            <% } %>
+            <!-- mainContent-->
+            <%- model.content %>
+            <!-- end content -->
+            <% if (model.title && model.guid) { %>
+          </div>
+          <% } %>
+        </article>
+      </main>
+    </div>
+  </body>
+</html>

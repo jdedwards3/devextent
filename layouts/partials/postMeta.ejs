@@ -1,0 +1,38 @@
+<p>
+  <% if (model.author && model.archives['author']) {%>
+  <span>
+    Author:
+    <a
+      href="/<%= model.archives['author'].find(item => item.name == model.author).slug %>/"
+      ><%= model.author %></a
+    >
+  </span>
+  <% } %>
+
+  <!-- meta -->
+  <% if (model.createdDate == model.modifiedDate) { %>
+  <span
+    >Published: <%= new Date(model.createdDate).toLocaleDateString() %></span
+  >
+  <% } else { %>
+  <span>Updated: <%= new Date(model.modifiedDate).toLocaleDateString() %></span>
+  <% } %>
+</p>
+
+<!-- tags -->
+<% if (model.tags && model.archives['tags']) { %>
+<div class="tag-list-container">
+  <span>Tags:</span>
+  <ul class="tag-list">
+    <% model.tags.forEach(function(tag) { %>
+    <li>
+      <a
+        href="/<%= model.archives['tags'].find(item => item.name == tag).slug %>/"
+        ><%= model.archives['tags'].find(item => item.name == tag).name %></a
+      >
+    </li>
+    <!-- end tags -->
+    <% }); %>
+  </ul>
+</div>
+<% } %>

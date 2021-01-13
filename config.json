@@ -1,0 +1,39 @@
+{
+  "siteName": "Dev Extent",
+  "siteDescription": "JavaScript and Web Development Articles",
+  "version": "0.0.1",
+  "saveContentGuid": { "enabled": true },
+  "typescript": {
+    "enabled": true,
+    "ignoreGlobs": ["functions"]
+  },
+  "sass": { "enabled": true },
+  "folders": {
+    "content": { "rootFiles": { "copyToOutput": true } },
+    "images": { "copyToOutput": true },
+    "scripts": { "cacheBust": true },
+    "styles": { "cacheBust": true }
+  },
+  "comments": { "enabled": true },
+  "environment": {
+    "dev": {
+      "domain": "http://localhost:3000"
+    },
+    "staging": {
+      "domain": ""
+    },
+    "production": {
+      "domain": "https://www.devextent.com",
+      "minifyHtml": true,
+      "minifyTypescriptOutput": true,
+      "sitemap": true,
+      "rssFeed": true,
+      "jsonApi": true,
+      "inlineSassOutput": true
+    }
+  },
+  "archiveData": [
+    { "type": "tags", "pagination": { "pageSize": 5 } },
+    { "type": "author", "pagination": { "pageSize": 5 } }
+  ]
+}

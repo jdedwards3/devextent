@@ -1,0 +1,13 @@
+{
+  "name": "devextent",
+  "version": "0.0.0",
+  "dependencies": {
+    "@protolith/morphic": "0.0.20",
+    "highlight.js": "^10.5.0"
+  },
+  "scripts": {
+    "dev": "cross-env morphicEnv=dev morphic",
+    "serve": "cross-env morphicEnv=dev morphic --serve",
+    "build": "npx morphic"
+  }
+}

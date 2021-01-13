@@ -1,0 +1,40 @@
+<div id="sidebar">
+  <div id="sidebar-inner">
+    <% if (model.slug) { %>
+    <nav>
+      <a href="/">Home</a>
+    </nav>
+    <% } %>
+
+    <form
+      id="search-form"
+      action="https://www.google.com/search"
+      method="get"
+      class="search"
+    >
+      <input
+        type="hidden"
+        name="q"
+        id="q"
+        value="site:<%= config.environment.domain %>"
+      />
+      <label for="search-str">Search</label>
+      <input type="text" name="q" id="search-str" />
+      <button type="submit" class="submit">Search</button>
+    </form>
+
+    <!-- tags -->
+    <% if (model.archives['tags']) { %>
+    <div class="tag-list-container">
+      <span>All Tags:</span>
+      <ul class="tag-list">
+        <% model.archives['tags'].forEach(function(tagData) { %>
+        <li>
+          <a href="/<%= tagData.slug %>/"><%= tagData.name %></a>
+        </li>
+        <% }); %>
+      </ul>
+    </div>
+    <% } %>
+  </div>
+</div>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- head -->
+  <%- include(config.folders.layouts.path + '/partials/head'); -%>
+  <body>
+    <!-- main -->
+    <div class="grid-wrapper">
+      <main id="main">
+        <article>
+          <!-- image -->
+          <% if (model.image) { %>
+          <img
+            class="post-image"
+            alt="<%= model.imageAlt %>"
+            src="/images/<%= model.image %>"
+          />
+          <% } %>
+          <!-- content -->
+          <% if (model.title && model.guid) { %>
+          <div
+            class="article-content-wrapper <%= model.image ? 'has-image' : '' %>"
+          >
+            <% } %>
+
+            <!-- title -->
+            <% if (model.title) { %>
+            <h1 class="title"><%= model.title %></h1>
+            <% } %>
+            <!--  -->
+            <% if (model.title && model.guid) { %>
+            <!-- meta -->
+            <%- include(config.folders.layouts.path + "/partials/postMeta") %>
+            <% } %>
+
+            <!--  -->
+            <% if (model.layout.startsWith("archives/")) { %>
+            <!--  -->
+            <%- include(config.folders.layouts.path + '/' + model.layout) %>
+            <!--  -->
+            <% } else { %>
+            <!--  -->
+            <%- model.content %>
+            <!--  -->
+            <% } %>
+            <!-- end content -->
+            <% if (model.title && model.guid) { %>
+          </div>
+          <% } %>
+        </article>
+      </main>
+      <aside id="aside">
+        <%- include(config.folders.layouts.path + '/partials/sidebar'); -%>
+      </aside>
+      <footer id="footer">
+        <%- include(config.folders.layouts.path + '/partials/footer'); -%>
+      </footer>
+    </div>
+    <script
+      type="module"
+      src="/scripts/<%= config.version %>/script.js"
+    ></script>
+  </body>
+</html>

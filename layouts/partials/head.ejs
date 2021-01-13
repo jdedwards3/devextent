@@ -1,0 +1,48 @@
+<head>
+  <!-- google analytics -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>
+    <%= model.title && model.title != config.siteName ? model.title + " | " +
+    config.siteName : config.siteName %>
+  </title>
+  <% if (model.metaDescription) { %>
+  <meta name="description" content="<%= model.metaDescription %>" />
+  <% } %>
+  <meta
+    name="robots"
+    content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+  />
+  <link rel="manifest" href="/manifest.json" />
+  <meta name="theme-color" content="#000000" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+  <meta
+    property="og:title"
+    content="<%= model.title ? model.title + ' | ' + config.siteName : config.siteName %>"
+  />
+  <meta
+    property="og:type"
+    content="<%= model.slug ? 'article' : 'website' %>"
+  />
+  <meta property="og:url" content="<%= config.environment.domain + '/' +
+  model.slug ? model.slug + "/" : "" %>" />
+  <meta
+    property="og:image"
+    content="<%= config.environment.domain + '/' + (model.image ? 'images/' + model.image : '/favicon.ico') %>"
+  />
+  <meta property="og:description" content="<%= model.metaDescription %>" />
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+  <link
+    rel="alternate"
+    type="application/rss+xml"
+    title="RSS 2.0"
+    href="<%=  config.environment.domain + '/feed.rss' %>"
+  />
+
+  <link rel="canonical" href="<%= model.canonical %>" />
+  <!-- Custom styles -->
+  <%- model.styles %>
+</head>
