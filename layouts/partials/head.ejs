@@ -31,7 +31,7 @@
   model.slug ? model.slug + "/" : "" %>" />
   <meta
     property="og:image"
-    content="<%= config.environment.domain + '/' + (model.image ? 'images/' + model.image : '/favicon.ico') %>"
+    content="<%= config.environment.domain + (model.image ? '/images/' + model.image : '/favicon.ico') %>"
   />
   <meta property="og:description" content="<%= model.metaDescription %>" />
   <link rel="icon" href="/favicon.ico" type="image/x-icon" />
