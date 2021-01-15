@@ -1,5 +1,4 @@
 <head>
-  <!-- google analytics -->
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>
@@ -9,6 +8,7 @@
   <% if (model.metaDescription) { %>
   <meta name="description" content="<%= model.metaDescription %>" />
   <% } %>
+  <meta name="monetization" content="$ilp.uphold.com/UHNWGWxfXkNk" />
   <meta
     name="robots"
     content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
@@ -19,6 +19,7 @@
     name="viewport"
     content="width=device-width, initial-scale=1, shrink-to-fit=no"
   />
+  <%- model.styles %>
   <meta
     property="og:title"
     content="<%= model.title ? model.title + ' | ' + config.siteName : config.siteName %>"
@@ -41,8 +42,5 @@
     title="RSS 2.0"
     href="<%=  config.environment.domain + '/feed.rss' %>"
   />
-
   <link rel="canonical" href="<%= model.canonical %>" />
-  <!-- Custom styles -->
-  <%- model.styles %>
 </head>
