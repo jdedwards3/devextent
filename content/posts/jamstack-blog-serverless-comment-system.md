@@ -1,5 +1,8 @@
 ---
 title: Build a Serverless Comment System for a Jamstack blog
+metaDescription:
+  Use the GitHub REST API, Azure Serverless Functions, and Node.js to post and
+  pre-render Jamstack blog comments without a database.
 guid: 0fe42a74-7cbf-439a-b403-31bdc6c25ad8
 author: James Edwards
 tags:
@@ -80,13 +83,16 @@ way to maintain the relationship between the comment submitted and the blog post
 it should reference. In this case a hidden field is added with a value of
 "POST_ID" to maintain this data during the form submit. This can be changed to
 anything that suits the build process in use, so that comments can be stored
-with this as a key to indicate which post they belong to. ## Azure Serverless
-Function Now that the client side HTML form is in place, we need an endpoint to
-submit the form to. Azure Javascript functions will be used to provide an
-endpoint configured to accept HTTP POST requests containing comment data, in the
-request body, that will be committed by our serverless function to the private
-git repository. Microsoft provides documentation to
-[set up a TypeScript function with Visual Studio Code](https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-first-function-vs-code?pivots=programming-language-typescript).
+with this as a key to indicate which post they belong to.
+
+## Azure Serverless Function
+
+Now that the client side HTML form is in place, we need an endpoint to submit
+the form to. Azure Javascript functions will be used to provide an endpoint
+configured to accept HTTP POST requests containing comment data, in the request
+body, that will be committed by our serverless function to the private git
+repository. Microsoft provides documentation to
+[set up a TypeScript function with Visual Studio Code](https://docs.microsoft.com/en-us/azure/azure-functions/create-first-function-vs-code-typescript).
 Please make sure to reference their documentation before proceeding. Below is
 the starting code that we will build out TypeScript function with:
 
@@ -110,9 +116,12 @@ At this point all the function does is set the
 response header and return an
 [HTTP 200 OK](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/200)
 success status response code with a success message. Next we will npm install
-the npm packages needed for the functions code. ## npm Install We are going to
-want to use the following npm packages within the code of the serverless
-function we are creating:
+the npm packages needed for the functions code.
+
+## npm install
+
+We are going to want to use the following npm packages within the code of the
+serverless function we are creating:
 
 - [uuid](https://www.npmjs.com/package/uuid)
 - [simple-git](https://www.npmjs.com/package/simple-git)
