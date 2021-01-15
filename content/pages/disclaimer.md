@@ -5,7 +5,7 @@ guid: b720ec94-9e89-402f-8564-5a538d036aff
 ---
 
 If you require any more information or have any questions about our site's
-disclaimer, please feel free to contact us by email at james@jamesedwards.net
+disclaimer, please feel free to contact us by email at admin@devextent.com
 
 ## Disclaimers for Dev Extent
 
