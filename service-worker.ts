@@ -3,7 +3,7 @@
 // export empty type because of tsc --isolatedModules flag
 export type {};
 
-const cacheName = "::default";
+const cacheName = "::swdevextent";
 const version = "0.0.1";
 
 declare const self: ServiceWorkerGlobalScope;
