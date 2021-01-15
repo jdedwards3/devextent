@@ -3,7 +3,7 @@
   <li class="post-list-item">
     <% if (index < 1) { %>
     <!-- image -->
-    <% if (post.image && model.guid) { %>
+    <% if (post.image && model.guid && !model.pagination.first) { %>
     <img
       class="post-image post-index"
       alt="<%= post.imageAlt %>"
