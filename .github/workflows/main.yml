@@ -1,0 +1,39 @@
+name: MAIN
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Update Blobs
+        uses: azure/cli@v1.0.0
+        with:
+          inlineScript: |
+            az storage blob sync -c '$web' -s _output --exclude-pattern '*.json' --connection-string '${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}'
+
+            az storage blob delete-batch -s '$web' --pattern '*.json' --connection-string '${{ secrets.
+            AZURE_STORAGE_CONNECTION_STRING }}'
+
+            az storage blob upload-batch -d '$web' -s _output --pattern '*.json' --connection-string '${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}'
+
+      - name: Purge CDN
+        uses: azure/cli@v1.0.0
+        with:
+          inlineScript: |
+            az login --service-principal -u http://myApp --password '${{ secrets.AZURE_LOGIN }}' --tenant '${{ secrets.AZURE_LOGIN_TENANT }}'
+
+            az cdn endpoint purge -g devextent -n 'devextent' --profile-name devextent --content-paths '/*' --no-wait
+
+            az logout
