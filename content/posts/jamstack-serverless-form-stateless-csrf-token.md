@@ -1,6 +1,10 @@
 ---
 title:
   Build a Jamstack form with Serverless functions and a Stateless CSRF token
+metaDescription:
+  Request a csrf token and post form data with the Fetch API using Azure
+  Serverless functions to generate and verify a stateless csrf token and save
+  form data.
 guid: 99c76914-c52e-477b-a101-8d63353e6ba9
 author: James Edwards
 tags:
