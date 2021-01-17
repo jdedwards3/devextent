@@ -280,6 +280,7 @@ body {
 }
 
 #footer {
+  padding: 15px 0;
   grid-area: footer;
   display: flex;
   flex-direction: column;
@@ -299,12 +300,16 @@ body {
       box-shadow: 0 2px 4px #020202;
     }
   }
+  p {
+    margin: 0;
+  }
   .footer-list {
     padding: 0;
     list-style-type: none;
     display: flex;
     li a {
-      padding: 0 20px;
+      padding-left: 10px;
+      padding-right: 10px;
     }
   }
 }
