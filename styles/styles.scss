@@ -370,4 +370,7 @@ pre {
 kbd {
   background-color: lightgrey;
   border-radius: 2px;
+  @media (prefers-color-scheme: dark) {
+    color: initial;
+  }
 }
