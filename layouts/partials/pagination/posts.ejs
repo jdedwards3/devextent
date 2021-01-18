@@ -5,6 +5,8 @@
     <!-- image -->
     <% if (post.image && model.guid && !model.pagination.first) { %>
     <img
+      height="350"
+      width="927"
       class="post-image post-index"
       alt="<%= post.imageAlt %>"
       src="/images/<%= post.image %>"
