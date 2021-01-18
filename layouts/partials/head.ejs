@@ -33,8 +33,10 @@
     property="og:type"
     content="<%= model.slug ? 'article' : 'website' %>"
   />
-  <meta property="og:url" content="<%= config.environment.domain + '/' +
-  model.slug ? model.slug + "/" : "" %>" />
+  <meta
+    property="og:url"
+    content="<%= config.environment.domain + '/' + (model.slug ? model.slug + '/' : '') %>"
+  />
   <meta
     property="og:image"
     content="<%= config.environment.domain + (model.image ? '/images/' + model.image : '/favicon.ico') %>"
