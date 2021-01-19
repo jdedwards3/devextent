@@ -11,40 +11,22 @@ tags:
   - TypeScript
 ---
 
-An [RSS](https://en.wikipedia.org/wiki/RSS) feed is a convenient way to allow
-access to syndicated content in a standardized format that is easily shareable
-and discoverable. Recently I've been using [feedly](https://feedly.com/) to stay
-up to date with a variety of web development blogs. This got me interested in
-how to add an rss feed to a static website built with the
-[Jamstack](https://jamstack.org/), specifically how to generate an rss feed from
-blog post data with node.js and [TypeScript](https://www.typescriptlang.org/).
+An [RSS](https://en.wikipedia.org/wiki/RSS) feed is a convenient way to allow access to syndicated content in a standardized format that is easily shareable and discoverable. Recently I've been using [feedly](https://feedly.com/) to stay up to date with a variety of web development blogs. This got me interested in how to add an rss feed to a static website built with the [Jamstack](https://jamstack.org/), specifically how to generate an rss feed from blog post data with node.js and [TypeScript](https://www.typescriptlang.org/).
 
-Before proceeding make sure to have [node.js](https://nodejs.org/en/) and
-[npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
-installed.
+Before proceeding make sure to have [node.js](https://nodejs.org/en/) and [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) installed.
 
 ## Run npm init
 
-There are some npm packages that will be used to create the rss feed, so first
-run the command <kbd>npm init</kbd>, which will create a package.json file that
-we can add dependencies to. After creating the package.json these are the npm
-packages that we will add:
+There are some npm packages that will be used to create the rss feed, so first run the command <kbd>npm init</kbd>, which will create a package.json file that we can add dependencies to. After creating the package.json these are the npm packages that we will add:
 
 - [fs-extra](https://www.npmjs.com/package/fs-extra)
 - [xml](https://www.npmjs.com/package/xml)
 - [cheerio](https://www.npmjs.com/package/cheerio)
 - [typescript](https://www.npmjs.com/package/typescript)
 
-To install these run the command <kbd>npm install fs-extra cheerio xml
-typescript --save</kbd>, and since we are using TypeScript for this example we
-need the corresponding type definitions. To install the type definitions run the
-command: <kbd>npm install @types/xml @types/cheerio @types/fs-extra
---save-dev</kbd>.
+To install these run the command <kbd>npm install fs-extra cheerio xml typescript --save</kbd>, and since we are using TypeScript for this example we need the corresponding type definitions. To install the type definitions run the command: <kbd>npm install @types/xml @types/cheerio @types/fs-extra --save-dev</kbd>.
 
-There is one extra field that needs to be added to the package.json file and
-that is the [type](https://nodejs.org/api/packages.html#packages_type) field.
-This permits the use of [ECMAScript modules](https://nodejs.org/api/esm.html),
-rather than [CommonJS modules](https://nodejs.org/api/modules.html).
+There is one extra field that needs to be added to the package.json file and that is the [type](https://nodejs.org/api/packages.html#packages_type) field. This permits the use of [ECMAScript modules](https://nodejs.org/api/esm.html), rather than [CommonJS modules](https://nodejs.org/api/modules.html).
 
 Your package.json should look similar to this:
 
@@ -76,10 +58,7 @@ Your package.json should look similar to this:
 
 ## Configure tsconfig.json
 
-Typescript is used in this example so tsconfig.json file is also required. You
-can read more about the tsconfig.json settings in the
-[TypeScript documentation](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html).
-For our case, create a file named tsconfig.json and copy the code below into it.
+Typescript is used in this example so tsconfig.json file is also required. You can read more about the tsconfig.json settings in the [TypeScript documentation](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html). For our case, create a file named tsconfig.json and copy the code below into it.
 
 ```json
 {
@@ -97,19 +76,11 @@ For our case, create a file named tsconfig.json and copy the code below into it.
 }
 ```
 
-The module field is set to "esnext" to match the addition of the "type" field in
-the package.json. This setting instructs the TypeScript compiler to generate
-[es modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules),
-and allows us to use
-[import](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import)
-in the TypeScript code.
+The module field is set to "esnext" to match the addition of the "type" field in the package.json. This setting instructs the TypeScript compiler to generate [es modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules), and allows us to use [import](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import) in the TypeScript code.
 
 ## npm package.json script
 
-After configuring TypeScript, we need a way to transpile and then execute the
-generated JavaScript with node.js. To do this, an npm package.json script can be
-added to carry out both steps. In the package.json file, add a new scripts
-property "createRssFeed", so that it looks like this:
+After configuring TypeScript, we need a way to transpile and then execute the generated JavaScript with node.js. To do this, an npm package.json script can be added to carry out both steps. In the package.json file, add a new scripts property "createRssFeed", so that it looks like this:
 
 ```json
 {
@@ -138,15 +109,11 @@ property "createRssFeed", so that it looks like this:
 }
 ```
 
-The createRssFeed script will sequentially compile the TypeScript source file
-(index.ts) and then use node to execute the JavaScript output. If you try
-running the command <kbd>npm run createRssFeed</kbd> you will get an error,
-because the index.ts doesn't exist yet. Let's create that now.
+The createRssFeed script will sequentially compile the TypeScript source file (index.ts) and then use node to execute the JavaScript output. If you try running the command <kbd>npm run createRssFeed</kbd> you will get an error, because the index.ts doesn't exist yet. Let's create that now.
 
 ## Add node script
 
-In the same folder as the package.json file create a new file named index.ts,
-and add the code below to make sure the setup is working.
+In the same folder as the package.json file create a new file named index.ts, and add the code below to make sure the setup is working.
 
 ```typescript
 import fs from "fs-extra";
@@ -158,16 +125,11 @@ import cheerio from "cheerio";
 })();
 ```
 
-Then run the createRssFeed command <kbd>npm run createRssFeed</kbd> and the
-output should print to the console the text "creating feed".
+Then run the createRssFeed command <kbd>npm run createRssFeed</kbd> and the output should print to the console the text "creating feed".
 
 ## Generate rss feed
 
-With the setup working we can now begin to use the npm packages that we
-imported. The xml package accepts a feed object as it's configuration so we can
-add that to the createRssFeed function. The feedObject will be processed into an
-xml string and then the fs-extra package will be used to write the output to a
-file named feed.rss.
+With the setup working we can now begin to use the npm packages that we imported. The xml package accepts a feed object as it's configuration so we can add that to the createRssFeed function. The feedObject will be processed into an xml string and then the fs-extra package will be used to write the output to a file named feed.rss.
 
 ```typescript
 import fs from "fs-extra";
@@ -215,18 +177,11 @@ import cheerio from "cheerio";
 })();
 ```
 
-Make sure to replace "YOUR-WEBSITE", "YOUR-WEBSITE-TITLE", and
-"YOUR-WEBSITE-DESCRIPTION" with the actual values from the website you are
-generating the RSS feed for.
+Make sure to replace "YOUR-WEBSITE", "YOUR-WEBSITE-TITLE", and "YOUR-WEBSITE-DESCRIPTION" with the actual values from the website you are generating the RSS feed for.
 
-At this point the createRssFeed npm package.json script should generate a new
-file named feed.rss in the project folder, although it will be an empty feed. So
-in the feed object we can replace the todo comment with code that will use some
-sample post data to generate the feed.
+At this point the createRssFeed npm package.json script should generate a new file named feed.rss in the project folder, although it will be an empty feed. So in the feed object we can replace the todo comment with code that will use some sample post data to generate the feed.
 
-In this case we'll create an array of objects for our sample post data, but a
-more likely scenario is that they would be dynamically sourced from a content
-store, like markdown files or a content management system.
+In this case we'll create an array of objects for our sample post data, but a more likely scenario is that they would be dynamically sourced from a content store, like markdown files or a content management system.
 
 Add the sample posts below directly above the feedObject variable.
 
@@ -265,10 +220,7 @@ Now that we some posts to include, replace the todo with this function call:
 ...(buildFeed(posts));
 ```
 
-This will take the result of the buildFeed function (we will write this next),
-which will be an array and
-[spread](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax)
-the results into the feedObject.
+This will take the result of the buildFeed function (we will write this next), which will be an array and [spread](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax) the results into the feedObject.
 
 Now the index.ts file should look like this:
 
@@ -346,10 +298,7 @@ import cheerio from "cheerio";
 })();
 ```
 
-The feedObject now includes the buildFeed function, which can be added below the
-createRssFeed function. As the name suggests this is where the feed items will
-be created and sorted by most recent date. Additionally the cheerio npm package
-will be used here.
+The feedObject now includes the buildFeed function, which can be added below the createRssFeed function. As the name suggests this is where the feed items will be created and sorted by most recent date. Additionally the cheerio npm package will be used here.
 
 ```typescript
 function buildFeed(
@@ -390,10 +339,7 @@ function buildFeed(
 }
 ```
 
-This code can now generate the RSS feed by re-running the command <kbd>npm run
-createRssFeed</kbd>, however any relative links in the post content will not
-link to the correct website, since RSS feeds require absolute links. We can
-convert them to absolute links using the cheerio npm package.
+This code can now generate the RSS feed by re-running the command <kbd>npm run createRssFeed</kbd>, however any relative links in the post content will not link to the correct website, since RSS feeds require absolute links. We can convert them to absolute links using the cheerio npm package.
 
 ## Convert relative links to absolute links
 
@@ -415,10 +361,7 @@ $.root()
 const postContent = $.root().find("body").html() as string;
 ```
 
-Here is some more info on this technique to
-[convert relative urls to absolute urls](/relative-url-to-absolute-url-nodejs/).
-Make sure to also replace the description property of the feedItem with the
-postContent variable. The buildFeed function should now look like this:
+Here is some more info on this technique to [convert relative urls to absolute urls](/relative-url-to-absolute-url-nodejs/). Make sure to also replace the description property of the feedItem with the postContent variable. The buildFeed function should now look like this:
 
 ```typescript
 function buildFeed(
@@ -474,23 +417,11 @@ function buildFeed(
 }
 ```
 
-The buildFeed function, first sorts all the posts by most recent date and then
-maps over the sorted posts to assign post data properties to the corresponding
-xml fields in the RSS feed. For each of the posts the content is modified, by
-using the cheerio npm package, to convert all the relative links to absolute
-links. That way when the RSS feed is shared the in-article links will link back
-to the correct website. As in the sections above make sure to replace
-"YOUR-WEBSITE" with the actual domain of your website. Additionally the date is
-formatted to [RFC 822 format](https://www.w3.org/Protocols/rfc822/), in order to
-match the [RSS specification](https://validator.w3.org/feed/docs/rss2.html).
+The buildFeed function, first sorts all the posts by most recent date and then maps over the sorted posts to assign post data properties to the corresponding xml fields in the RSS feed. For each of the posts the content is modified, by using the cheerio npm package, to convert all the relative links to absolute links. That way when the RSS feed is shared the in-article links will link back to the correct website. As in the sections above make sure to replace "YOUR-WEBSITE" with the actual domain of your website. Additionally the date is formatted to [RFC 822 format](https://www.w3.org/Protocols/rfc822/), in order to match the [RSS specification](https://validator.w3.org/feed/docs/rss2.html).
 
-Re-run the command <kbd>npm run createRssFeed</kbd>, and the feed.rss file that
-is generated should reflect the changes we made. You can verify that this file
-is a valid rss feed by checking it with the
-[w3c Feed Validation Service](https://validator.w3.org/feed/).
+Re-run the command <kbd>npm run createRssFeed</kbd>, and the feed.rss file that is generated should reflect the changes we made. You can verify that this file is a valid rss feed by checking it with the [w3c Feed Validation Service](https://validator.w3.org/feed/).
 
-To permit auto discovery of the RSS feed make sure to include the following html
-in the head tag of your website.
+To permit auto discovery of the RSS feed make sure to include the following html in the head tag of your website.
 
 ```html
 <link
