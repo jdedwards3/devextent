@@ -319,8 +319,10 @@ body {
     padding: 0;
     padding-top: 0.5rem;
     li a {
-      padding-left: 10px;
-      padding-right: 10px;
+      margin: 0 10px;
+      height: 1.5rem;
+      width: 1.5rem;
+      display: inline-block;
     }
   }
 }
