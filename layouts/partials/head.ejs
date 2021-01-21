@@ -1,10 +1,24 @@
 <head>
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-5GTWSGP1V3"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-5GTWSGP1V3");
+  </script>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>
     <%= model.title && model.title != config.siteName ? model.title + " | " +
     config.siteName : config.siteName %>
   </title>
+  <link rel="canonical" href="<%= model.canonical %>" />
   <script
     data-ad-client="ca-pub-6747903070938911"
     async
@@ -24,7 +38,6 @@
     name="viewport"
     content="width=device-width, initial-scale=1, shrink-to-fit=no"
   />
-  <%- model.styles %>
   <meta
     property="og:title"
     content="<%= model.title ? model.title + ' | ' + config.siteName : config.siteName %>"
@@ -50,5 +63,5 @@
     title="RSS 2.0"
     href="<%=  config.environment.domain + '/feed.rss' %>"
   />
-  <link rel="canonical" href="<%= model.canonical %>" />
+  <%- model.styles %>
 </head>
