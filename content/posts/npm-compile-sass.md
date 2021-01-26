@@ -8,6 +8,8 @@ author: James Edwards
 tags:
   - Node.js
   - SASS
+image: npm-compile-sass.png
+imageAlt: Compile SCSS into CSS
 ---
 
 There are many different ways to compile [SCSS](https://stackoverflow.com/questions/5654447/whats-the-difference-between-scss-and-sass), one of the [two syntaxes supported by SASS](https://sass-lang.com/documentation/syntax). In this post we will explore the utilization of the [node-sass](https://www.npmjs.com/package/node-sass?activeTab=readme) npm package. We'll also look at how we can use the [clean-css](https://www.npmjs.com/package/clean-css) npm package to minify and optimize the generated output after compiling SCSS into CSS. Both of these techniques are similar to how Bootstrap handles the [compilation](https://github.com/twbs/bootstrap/blob/622c914a3acc1ab933b3e89d8abfdd63feeb4016/package.json#L25) and [minification](https://github.com/twbs/bootstrap/blob/622c914a3acc1ab933b3e89d8abfdd63feeb4016/package.json#L29) of its SCSS files. Please make sure you have [Node.js](https://nodejs.org/en/) and [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) installed first.
