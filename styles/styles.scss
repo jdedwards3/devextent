@@ -29,6 +29,7 @@ body {
   grid-template-columns: minmax(0, 1fr);
   grid-template-rows: auto minmax(0, 1fr) auto;
   grid-template-areas:
+    "header"
     "main"
     "aside"
     "footer";
@@ -43,6 +44,7 @@ body {
     grid-template-columns: minmax(0, 1fr) 300px;
     grid-template-rows: minmax(0, 1fr) auto;
     grid-template-areas:
+      "header header"
       "main aside"
       "footer footer";
   }
@@ -54,9 +56,21 @@ body {
   }
 }
 
+#header {
+  grid-area: header;
+  margin: 0 0 30px 0;
+  img {
+    margin: 0 auto;
+    display: block;
+  }
+  @media (min-width: $breakpoint) {
+    margin: 30px 0 0 0;
+  }
+}
+
 #main {
   grid-area: main;
-  margin: 30px 0;
+  margin: 0 0 30px 0;
   @media (min-width: $breakpoint) {
     border-radius: 10px;
   }
@@ -245,7 +259,7 @@ body {
 
 #aside {
   grid-area: aside;
-  margin: 30px 0;
+  margin: 0 0 30px 0;
   #sidebar {
     @media (min-width: $breakpoint) {
       padding-top: 30px;
@@ -361,9 +375,9 @@ p {
 img {
   max-width: 100%;
   height: auto;
-  border-radius: 10px;
   &.post-image {
     display: flex;
+    border-radius: 10px;
     &.post-index {
       max-width: 100%;
       margin: 0;
