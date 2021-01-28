@@ -320,7 +320,8 @@ SendGrid.setApiKey(process.env["SendGridApiKey"] as string);
 
 const httpTrigger: AzureFunction = async function (
   context: Context,
-  req: HttpRequest ): Promise&lt;void&gt; {
+  req: HttpRequest
+): Promise<void> {
   context.log("HTTP trigger function processed a request.");
 
   context.res!.headers["Content-Type"] = "application/json";
@@ -328,20 +329,20 @@ const httpTrigger: AzureFunction = async function (
   const body = querystring.parse(req.body);
 
   if (
-      !(
-        body &&
-        body.comment &&
-        body.postGuid &&
-        body.authorEmail &&
-        body.authorName
-      )
-    ) {
-      context.res!.status = 400;
-      context.res!.body = {
-        message: "Comment invalid. Please correct errors and try again.",
-      };
-      return;
-    }
+    !(
+      body &&
+      body.comment &&
+      body.postGuid &&
+      body.authorEmail &&
+      body.authorName
+    )
+  ) {
+    context.res!.status = 400;
+    context.res!.body = {
+      message: "Comment invalid. Please correct errors and try again.",
+    };
+    return;
+  }
 
   //Initialize Git Repository with Simple Git
 
@@ -378,21 +379,14 @@ const httpTrigger: AzureFunction = async function (
 
   // create branch
   try {
-
     // fetch main branch to base of off
     await git.fetch("private", "main");
 
     // use postID to see if comments already are saved for this post
-    await git.checkout("private/main", [
-      "--",
-      `comments/${body.postId}.json`,
-    ]);
+    await git.checkout("private/main", ["--", `comments/${body.postId}.json`]);
 
     // create new branch named with commentID based off main branch
-    await git.checkoutBranch(
-      `${commentId}`,
-      "private/main"
-    );
+    await git.checkoutBranch(`${commentId}`, "private/main");
   } catch (error) {
     // no previous comments are saved for this post
     await git.checkout("private/main");
@@ -437,9 +431,7 @@ const httpTrigger: AzureFunction = async function (
 
   // stage file modifications, commit and push
 
-  await git.add(
-    `${tmpdir}/${tempRepo}/comments/${body.postId}.json`
-  );
+  await git.add(`${tmpdir}/${tempRepo}/comments/${body.postId}.json`);
 
   await git.commit(`adding comment ${commentId}`);
 
@@ -484,7 +476,6 @@ const httpTrigger: AzureFunction = async function (
   context.res!.body = {
     message: "Success!",
   };
-
 };
 
 export default httpTrigger;
@@ -679,7 +670,7 @@ const readFile = util.promisify(fs.readFile);
 const httpTrigger: AzureFunction = async function (
   context: Context,
   req: HttpRequest
-): Promise&lt;void&gt; {
+): Promise<void> {
   context.log("HTTP trigger function processed a request.");
 
   context.res!.headers["Content-Type"] = "application/json";
@@ -716,33 +707,24 @@ const httpTrigger: AzureFunction = async function (
     git.addRemote(
       "private",
       `https://GITHUB_USERNAME:${process.env["GitHubUserPassword"]}@https://github.com/GITHUB_USERNAME/PRIVATE_REPOSITORY`
-      ),
+    ),
     git.addRemote(
       "public",
       `https://GITHUB_USERNAME:${process.env["GitHubUserPassword"]}@https://github.com/GITHUB_USERNAME/PUBLIC_REPOSITORY`
-      ),
+    ),
   ]);
 
   // fetch public and integrate with latest modifications from private repo
 
   await git.fetch("public", "main");
 
-  await git.checkout("main", [
-    "--",
-    "comments/",
-  ]);
+  await git.checkout("main", ["--", "comments/"]);
 
-  await git.checkoutBranch(
-    "main",
-    "main"
-  );
+  await git.checkoutBranch("main", "main");
 
   await git.fetch("private", "main");
 
-  await git.checkout("main" , [
-    "--",
-    "comments/",
-  ]);
+  await git.checkout("main", ["--", "comments/"]);
 
   // filter private data from comments
 
@@ -754,7 +736,6 @@ const httpTrigger: AzureFunction = async function (
   // wait for all paths to process asynchronously
   await Promise.all(
     paths.map(async (path) => {
-
       let pathData = [];
 
       //read JSON file with comment info
