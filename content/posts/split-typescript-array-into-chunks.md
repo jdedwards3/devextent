@@ -12,7 +12,7 @@ tags:
 
 Running too many asynchronous processes simultaneously with Node.js can cause issues that will lead to the process crashing. An example of this is when reading files inside of an asynchronous callback function that is being executed using the [map() method](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) on an array. To prevent a scenario where the node.js process might crash with an [EMFILE error](https://nodejs.org/api/errors.html#errors_common_system_errors), it can be helpful to split an array into smaller arrays or chunks, and process the group of smaller arrays synchronously while asynchronously mapping over the items in each of the smaller arrays. By doing this the contents of the original array can be processed in batches, preventing an error caused by opening too many files at once in parallel. The following configuration will allow us to demonstrate the EMFILE error and then add code to split an array into chunks, batching the process, and preventing the error from occurring.
 
-## Setup Node.js and npm package.json
+### Setup Node.js and npm package.json
 
 Make sure to have [node.js](https://nodejs.org/en/) and [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) installed before following these steps. Then run the command <kbd>npm init</kbd> and follow the prompts to create a package.json file. Once the package.json file is created add the setting:
 
@@ -48,7 +48,7 @@ The package.json file should look similar to this:
 }
 ```
 
-## Setup TypeScript
+### Setup TypeScript
 
 After configuring Node.js, add a tsconfig.json file to same folder as the package.json file. This lets us use TypeScript, which we just installed, instead of JavaScript and as a result we get the advantage of [generic types](https://www.typescriptlang.org/docs/handbook/generics.html) among other features. Copy this config into the tsconfig.json file:
 
@@ -70,7 +70,7 @@ After configuring Node.js, add a tsconfig.json file to same folder as the packag
 
 Now the output of the TypeScript compilation, indicated in the tsconfig "module" field, will be created as ECMAScript modules, which matches the type field added to the package.json configuration.
 
-## Node.js EMFILE Error When Reading Files
+### Node.js EMFILE Error When Reading Files
 
 The configuration steps are now complete and we can add some code that will demonstrate the EMFILE error that can be prevented by batch processing the array in smaller chunks. This sample code, that results in an error, can be added to index.ts.
 
@@ -112,7 +112,7 @@ What is occurring is that we are trying to asynchronously read the data.json fil
 
 Rather than trying all ten thousand file read attempts at once, the array can be split into chunks and the read requests can be processed in batches, ensuring the number total number of file descriptors is within a suitable limit for the system that Node.js is operating on. To do this we can create a generic TypeScript function that will split any type of array into chunks of the original array type.
 
-## TypeScript Generic Reducer to Split Array Into Chunks
+### TypeScript Generic Reducer to Split Array Into Chunks
 
 In the index.ts file, and above the main function that is immediately invoked we can create another function named "chunkItems". This will utilize TypeScript generics to create an array containing groups of smaller arrays, that match the type of the original array.
 

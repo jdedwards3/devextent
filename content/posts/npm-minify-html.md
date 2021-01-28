@@ -14,7 +14,7 @@ The [html-minifier](https://www.npmjs.com/package/html-minifier) npm package pro
 
 Before following the steps below make sure to have [Node.js](https://nodejs.org/en/) and [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) installed.
 
-## HTML
+### HTML
 
 To demonstrate the features provided by the html-minifier package we will start out with a sample html file. We can name this file index.html, and save it to a folder called "src". The name of the file and containing folder will be needed in the following steps. For this example, the sample file contains different types of elements to highlight the effect of minification, especially in regard to how white space is maintained when using preformatted elements.
 
@@ -35,7 +35,7 @@ There is more than one line in this text block.
 
 **_NOTE_**: A more common scenario than starting with a sample file might be applying the minification step to the output of a build process. If you are interested in seeing an example of how to generate HTML output, here is some info on how to [render EJS files with Node.js](/ejs-render-file/). The steps in that article can be extended to create a static site generator, and the html-minifier package can be included and used as part of the build process.
 
-## package.json
+### package.json
 
 Next we will want to set up the [package.json](https://docs.npmjs.com/creating-a-package-json-file) file so that we can npm install the html-minifier package. If one is not already created, running the command <kbd>npm init</kbd> and following the prompts will create one. Once the package.json file is in place we can run the command <kbd>npm install html-minifier --save-dev</kbd> to install the html-minifier npm package.
 
@@ -72,7 +72,7 @@ Here is what the package.json file should look like with the script added:
 
 Let's look at each of the options being passed in to the html-minifier cli, and see what each is specifying.
 
-## html-minifier options
+### html-minifier options
 
 The first option --input-dir is specifying the folder that our source html file is located. In this case the folder name is "src", which was created during the initial step. Following that, --output-dir is specifying the output directory where the minified html file will be added. In this case it is set to "dist", although this can be changed to any folder name.
 
@@ -84,7 +84,7 @@ Depending on whether set to true or false (or not included as the default value 
 
 To get a full list of all the options supported, it can be helpful to globally install the html-minifier package by running the command <kbd>npm install html-minifier -g</kbd> (this may require administrator access). With the package installed globally, running the command <kbd>html-minifier --help</kbd> will list all of the command line options, their value if applicable, and a short help text description.
 
-## Minify HTML
+### Minify HTML
 
 Now that the html-minify script is added and the options are configured, to use it run the command <kbd>npm run html-minify</kbd>. As a result a new folder called "dist" should have been created where the src folder is located. Within that folder should be the minified version of the index.html file initially created.
 

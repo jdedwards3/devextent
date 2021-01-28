@@ -14,7 +14,7 @@ imageAlt: Compile SCSS into CSS
 
 There are many different ways to compile [SCSS](https://stackoverflow.com/questions/5654447/whats-the-difference-between-scss-and-sass), one of the [two syntaxes supported by SASS](https://sass-lang.com/documentation/syntax). In this post we will explore the utilization of the [node-sass](https://www.npmjs.com/package/node-sass?activeTab=readme) npm package. We'll also look at how we can use the [clean-css](https://www.npmjs.com/package/clean-css) npm package to minify and optimize the generated output after compiling SCSS into CSS. Both of these techniques are similar to how Bootstrap handles the [compilation](https://github.com/twbs/bootstrap/blob/622c914a3acc1ab933b3e89d8abfdd63feeb4016/package.json#L25) and [minification](https://github.com/twbs/bootstrap/blob/622c914a3acc1ab933b3e89d8abfdd63feeb4016/package.json#L29) of its SCSS files. Please make sure you have [Node.js](https://nodejs.org/en/) and [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) installed first.
 
-## SCSS
+### SCSS
 
 First an SCSS file is needed, and it can be placed in the root of the project folder. To illustrate the preprocessing of our SCSS file into CSS let's add some style rules that are intentionally utilizing the SCSS syntax. We'll look to the [Sass Basics guide](https://sass-lang.com/guide) for some code snippets.
 
@@ -61,7 +61,7 @@ nav {
 
 Now that we have an SCSS file to process, the next step involves configuring the package.json to install the necessary dependencies and provide a way to compile SCSS with Node.js by adding custom scripts.
 
-## package.json
+### package.json
 
 Using the scripts section of an [npm package.json](https://docs.npmjs.com/files/package.json) file we can execute a series of commands to carry out the compilation of SCSS and optimize the resulting CSS output. A package.json file is required, and can be created running the command <kbd>npm init</kbd> in the project folder and following the prompts, or copying below.
 
@@ -89,7 +89,7 @@ Your package.json file should look like this:
 
 If for some reason your file looks different, you can copy the above and run the command <kbd>npm install</kbd>. This will reinstall both packages.
 
-## Compile Sass to CSS using node-sass
+### Compile Sass to CSS using node-sass
 
 With the dependencies available we can add a script to compile the SCSS file created earlier with the node-sass npm package.
 
@@ -112,7 +112,7 @@ In this case parameters are used to indicate source maps should be generated (fo
 
 At this point we can run the compile styles script by running the command <kbd>npm run compile-styles</kbd>. However, this is only running node-sass and isn't minifying the css output, so we need to add another script to carry out the css optimization.
 
-## Minify CSS with clean-css
+### Minify CSS with clean-css
 
 Like the node-sass package, we installed the clean-css package in the first step. To utilize it we'll add an additional script to the package.json file.
 
@@ -139,7 +139,7 @@ Similar to the compile-styles script, the css-minify script is also quite long a
 
 The two files we are most interested in are styles.css and styles.min.css. These are the browser compatible style sheets that can now be linked in any HTML file.
 
-## CSS
+### CSS
 
 To make sure everything worked correctly your styles.css file should look like this:
 
@@ -176,7 +176,7 @@ nav a {
 
 You can also verify the styles.min.css file because it should have identical content with all of the whitespace removed. Also take note that a comment is included at the bottom for the source map file. This can be left as is and allows for seeing the style rules in the original SCSS file from the browser's dev tools.
 
-## Run npm Scripts Sequentially
+### Run npm Scripts Sequentially
 
 With the output being generated correctly, there is one additional step we can do to simplify the SCSS processing into one command. Looking back to the scripts section of the package.json file, let's add one more script to combine the other two.
 

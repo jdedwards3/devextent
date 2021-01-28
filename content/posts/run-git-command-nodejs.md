@@ -15,7 +15,7 @@ If you're building a blog with the [Jamstack](https://jamstack.org/) your conten
 
 Before getting started it may be helpful to checkout how to [render EJS files with Node.js](/ejs-render-file/). The code below assumes a static build process and that the source is tracked in a git repository, as well as having [Node.js](https://nodejs.org/en/) and [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) installed.
 
-## Setup TypeScript
+### Setup TypeScript
 
 If you're interested in more information about setting up Typescript, checkout this post that shows how to [compile TypeScript with npm](/npm-compile-typescript/). There you can see how to create a package.json file and add a tsconfig.json to configure the TypeScript compiler.
 
@@ -37,7 +37,7 @@ Here is what your tsconfig.json file should look like, in order for the code tha
 
 This configuration instructs the TypeScript compiler to use commonjs modules and output code that targets the ES6 specification, which is needed since an async function will be needed to utilize the npm package we'll use to gather git file metadata.
 
-## npm install Simple Git
+### npm install Simple Git
 
 Next, the Simple Git npm package is needed so that it can be used to access the git metadata. Run the command <kbd>npm install simple-git --save-dev</kbd> in the terminal, and that will install the Simple Git package to the node_modules folder.
 
@@ -59,7 +59,7 @@ At this point the package.json file should look similar to this (the package ver
 
 **_NOTE_**: Since we are using TypeScript for this example, usually a type definition package is also required to be "npm installed" just like the actual package. In this case the Simple Git package includes the @types type declarations, so downloading a separate package is not needed.
 
-## Use Simple Git with TypeScript
+### Use Simple Git with TypeScript
 
 With TypeScript and the npm package.json configured we can now create a TypeScript file, let's call it index.ts. This will contain the code that will access the git metadata of our post file. To get started the Simple Git npm package will be imported, and an async function will be needed to utilize the Simple Git package, immediately following the async build function is called so the result can be output.
 

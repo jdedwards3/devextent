@@ -11,7 +11,7 @@ guid: 9e7ec00f-d165-41d5-b007-73486ff4f119
 
 Let's say you are building a site with the [Jamstack](https://jamstack.org/) and you want to [use node.js to generate the rss feed for your site](/xml-rss-feed-nodejs/). In doing so you realize that your post content contains relative links when checking with the validator provided by the [W3C Feed validation service](https://validator.w3.org/), and it indicates [elements should not contain relative URL references](https://validator.w3.org/feed/docs/warning/ContainsRelRef.html). In order to make sure the RSS feed is valid, and only containing absolute URLs, we can use the [cheerio npm package](https://www.npmjs.com/package/cheerio) to parse an HTML source and transform relative anchor links and image sources to absolute URLs. To demonstrate this we can create an HTML file that represents sample post content.
 
-## HTML with relative links
+### HTML with relative links
 
 ```html
 <p>
@@ -27,7 +27,7 @@ Let's say you are building a site with the [Jamstack](https://jamstack.org/) and
 
 This isn't a full HTML document, only a fragment that represents a sample of what may be contained in a blog post that has been converted from markdown into HTML with a node.js static site generator. Now that the sample HTML file is created and saved as "sample-post.html" we can read it and process the relative links.
 
-## Cheerio npm package
+### Cheerio npm package
 
 To use the cheerio npm package we need to create a node script, and for this we can optionally use TypeScript. For more info about using TypeScript with Node.js, read about how to [compile TypeScript with npm](/npm-compile-typescript/). If you aren't using TypeScript you can omit the type declarations from the following code.
 
@@ -70,7 +70,7 @@ Your package.json file should look similar to this:
 
 You can also copy the above json and save as package.json, then run the command <kbd>npm install</kbd> to install all of the dependencies listed.
 
-## Transform relative URL to absolute URL
+### Transform relative URL to absolute URL
 
 Then create a new file named script.ts and place the following code inside of it:
 
@@ -103,7 +103,7 @@ Make sure to replace "YOUR-DOMAIN-HERE" with actual domain you want to convert t
 
 The code inside the "convertRelativeToAbsolute" function, first reads the sample post file containing the HTML file with relative links. Then it uses the cheerio package to load the file and parse it to find all of the anchor tags and images tags that are referencing relative URLs. The selectors used scope either anchor tags or image tags to those that begin with a forward slash, which can most likely be safely assumed to be a relative link. Depending on whether the element is an anchor link or an image, either the href attribute or the src attribute will be prepended with the site domain, to make it an absolute link. When all of the link and image attributes are processed the sample html file is written back to the original file location.
 
-## Compile TypeScript and Run Node script
+### Compile TypeScript and Run Node script
 
 Now we can add a script to the package.json file that will compile the TypeScript script file and run the "convertRelativeToAbsolute" function. In the package.json file add this line to the scripts property:
 

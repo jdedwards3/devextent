@@ -13,7 +13,7 @@ tags:
 
 [EJS](https://ejs.co/) is a templating language that uses JavaScript to generate HTML. This post will illustrate how to use Node.js with TypeScript to render an EJS file into HTML markup. Please make sure you have [Node.js](https://nodejs.org/en/) and [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) installed first. If you are unfamiliar with Typescript please read my post describing how to [compile TypeScript with npm](/npm-compile-typescript/).
 
-## EJS
+### EJS
 
 Begin by creating a new EJS file named index.ejs. This file will be the template used to generate index.html. If the model is passed into the template it will render the content as a paragraph.
 
@@ -27,7 +27,7 @@ Begin by creating a new EJS file named index.ejs. This file will be the template
 <%% } %%>
 ```
 
-## package.json
+### package.json
 
 If you don't already have a package.json created you can create one by running the command <kbd>npm init</kbd> and following the prompts.
 
@@ -48,7 +48,7 @@ You will need your package.json to include these packages:
 
 You can also copy the devDependencies section and run the command <kbd>npm install</kbd> instead of installing one at a time.
 
-## Node.js
+### Node.js
 
 Create a new TypeScript file named render.ts. Then add the following code to import the modules that we will use.
 
@@ -147,7 +147,7 @@ We also need to add a script to the package.json file created earlier. This scri
 }
 ```
 
-## EJS render HTML
+### EJS render HTML
 
 The render script can be run in a terminal window by typing the command <kbd>npm run render</kbd>. Make sure to run this command from the directory where your package.json is located. After running the render script you should now see a folder named dist containing a file named index.html.
 

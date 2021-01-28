@@ -14,7 +14,7 @@ imageAlt: Compile TypeScript into JavaScript
 
 Npm package.json scripts can be used to run various commands. Here, we will learn how to run the TypeScript compiler to generate JavaScript output from TypeScript source files. Before we start, make sure you have [Node.js](https://nodejs.org/en/) and [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) installed.
 
-## TypeScript
+### TypeScript
 
 In a new folder, create a file named script.ts. Then, add some sample code so we can test whether the JavaScript output is being generated properly.
 
@@ -23,7 +23,7 @@ const msg: string = "Hello World!";
 console.log(msg);
 ```
 
-## TypeScript Compiler
+### TypeScript Compiler
 
 In the same folder, create a new file named tsconfig.json. Here is the TypeScript official documentation for configuring [tsconfig.json](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html).
 
@@ -41,7 +41,7 @@ Your tsconfig.json file should look like this:
 
 This configuration tells the TypeScript compiler to look for source files in the root of your project, where your tsconfig.json is located. For any TypeScript files it finds there, it will output the compiled JavaScript to a new folder named output.
 
-## package.json
+### package.json
 
 In the same folder create a package.json file. Here is the npm official documentation on creating a [package.json](https://docs.npmjs.com/creating-a-package-json-file) file.
 
@@ -61,7 +61,7 @@ Your package.json file should look like this:
 
 Now that package.json is created and the TypeScript compilation step is listed, we must save TypeScript as a dev dependency. This will give the npm task access.
 
-## npm Install TypeScript
+### npm Install TypeScript
 
 To install TypeScript for this project in a terminal window, run the command: <kbd>npm install typescript --save-dev</kbd>
 
@@ -80,7 +80,7 @@ After installing TypeScript, your package.json should look like this:
 }
 ```
 
-## JavaScript
+### JavaScript
 
 In a terminal window, navigate to the source code folder you created. Then, run the following command: <kbd>npm run compile-typescript</kbd>
 
@@ -93,7 +93,7 @@ var msg = "Hello World";
 console.log("msg");
 ```
 
-## Run Node.js Script
+### Run Node.js Script
 
 The script.js created as a result of running the "compile-typescript" command can now be run with Node.js. To do this another package.json script is added, which is named "start". The "start" script will run the node cli command which the path of the script.ts file is passed.
 
@@ -113,7 +113,7 @@ The script.js created as a result of running the "compile-typescript" command ca
 
 Run the start command by entering <kbd>npm run start</kbd> in a terminal window, and you should see the output "Hello World!" printed to the console.
 
-## Run npm Scripts Sequentially
+### Run npm Scripts Sequentially
 
 To save time the "compile-typescript" and "start" commands can be combined into one command by modifying the start command to include this functionality.
 

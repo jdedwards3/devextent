@@ -13,11 +13,11 @@ tags:
 
 There are a variety of ways to send an email with Node.js. One way is to utilize the email service offered by [SendGrid](https://sendgrid.com/). The [email API](https://sendgrid.com/solutions/email-api/) has a [free plan](https://sendgrid.com/pricing/), which does have a usage limit, specified on their website, but it should be enough for example purposes. To use the [SendGrid Mail Service npm package](https://www.npmjs.com/package/@sendgrid/mail), an API key is required which can be obtained by [creating a new SendGrid account](https://signup.sendgrid.com/).
 
-## SendGrid API Key
+### SendGrid API Key
 
 If you are having trouble creating an API key, please view the [API Keys documentation](https://sendgrid.com/docs/ui/account-and-settings/api-keys/) provided by SendGrid. With the API key obtained, we can begin writing code that will utilize the free SendGrid service. You should not "hardcode" your API key into your application code. A more secure way of granting the application access to your account API key is to store it as an environment variable.
 
-## Azure Serverless Function
+### Azure Serverless Function
 
 In order to send the email we can use a serverless function, for this example we will use a [JavaScript Azure Function](https://docs.microsoft.com/en-us/azure/azure-functions/functions-reference-node). The serverless function will accept an HTTP post request and trigger the sending of an email to the address provided in the form submission. In order to do this we will need an HTML form. Before using the following code, it's a good idea to check out this other post on [Submitting Form Data with the Fetch API](/fetch-api-post-formdata-object/).
 
@@ -42,7 +42,7 @@ export default httpTrigger;
 
 This is the base code needed for the Azure serverless function. Below we will look to see how the data contained in the request body will be used to generate the email.
 
-## Send Email with SendGrid and Node.js
+### Send Email with SendGrid and Node.js
 
 **_NOTE_**: This code is setup as if the request body contains two keys, one for emailAddress and one for emailMessage. Additionally, the SendGrid API key obtained earlier is accessed here from an environment variable. See the Azure documentation to [add an application setting](https://docs.microsoft.com/en-us/azure/azure-functions/functions-how-to-use-azure-function-app-settings). Application settings are accessed as environment variables in the serverless function code.
 

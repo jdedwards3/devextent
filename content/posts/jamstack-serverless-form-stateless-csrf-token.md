@@ -15,7 +15,7 @@ To mitigate [Cross-site request forgery](https://en.wikipedia.org/wiki/Cross-sit
 
 This example will show how a publicly available HTML form, can be submitted using the [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API), with [TypeScript](https://www.typescriptlang.org/), to first asynchronously retrieve a valid token, and then submit that token in a second request to save the form information. For the [server-side](https://en.wikipedia.org/wiki/Server-side#:~:text=Server%2Dside%20refers%20to%20operations,relationship%20in%20a%20computer%20network.) components, [Azure Functions](https://docs.microsoft.com/en-us/azure/azure-functions/) will be used, however these techniques can be applied to other server-side technologies, including a typical server.
 
-## HTML Form
+### HTML Form
 
 We can create a form containing any fields we would like to submit. Let's create a sample contact form with some standard information to collect. There is one extra field at the bottom of the form that is hidden to act as a decoy field for bots to incorrectly submit. This can be ignored for now, but it will be validated in the serverless function handling submissions of the contact form.
 
@@ -93,7 +93,7 @@ Make sure to replace "YOUR-DOMAIN" in the form action attribute to the domain yo
 
 The bottom of the HTML document includes a reference to a script named "form.js" and this is where the JavaScript code to submit the form will be included. We can create that file now with TypeScript.
 
-## TypeScript Form Submit
+### TypeScript Form Submit
 
 For this example we'll use TypeScript, which will transpile to the script referenced in the HTML form (script.js). More info on how to use TypeScript with HTML forms can be found in this article showing how to [submit a FormData object using the ES6 Fetch Web API](/fetch-api-post-formdata-object/). With TypeScript properly configured, we can create the form.ts file and add some of the needed code:
 
@@ -141,7 +141,7 @@ const formData = new FormData(form);
 
 The first bit of code added, will select the submit button of the form and disable it during the submission so that the form cannot be submitted multiple times. Then the "form-submit-msg" element will show a message that indicates to the viewer the form is processing. After alerting the user, the form is gathered from the event target passed as an argument of the submit event listener. The "event.target" value is cast to an [HTMLFormElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement) so that TypeScript will permit the access of the "target" property. Then a [FormData](https://developer.mozilla.org/en-US/docs/Web/API/FormData) object is instantiated with the form element. Next we can send the formData variable using the Fetch API.
 
-## Get csrf Token and Post FormData with Fetch API
+### Get csrf Token and Post FormData with Fetch API
 
 Before accessing the result of the form submission, two extra helper functions are created to handle and log any errors that may occur during the Fetch API post request. Once the helper functions are created the Fetch request is stored in the "result" variable.
 
@@ -295,7 +295,7 @@ class FormHandler {
 }
 ```
 
-## CSRF Token Serverless Function
+### CSRF Token Serverless Function
 
 The client-side code is now set up, so we can look at creating the Azure TypeScript Serverless Functions that will provide a server-side environment to generate the CSRF token and then validate the token to save the form submission data. Here is the [quickstart documentation for creating an Azure TypeScript function with Visual Studio code](https://docs.microsoft.com/en-us/azure/azure-functions/create-first-function-vs-code-typescript). Once that is setup, we are going to create two functions. The first is the formToken endpoint.
 
@@ -373,7 +373,7 @@ If the timestamp is valid, a new token is generated using the csrf npm package [
 
 In this example the same secret is used for all tokens that are generated. This may be useful as all tokens can be invalidated by changing the secret, and given the short length of the token date limit range this can work well. However, it may be advantageous to use the csrf npm package [token.secret()](https://github.com/pillarjs/csrf#tokenssecret) function to dynamically create a new secret for each token that is generated. You could then store both the token and the secret in a database, or Azure Table Storage, and use the token to look up the stored secret, to later verify the token on the subsequent request.
 
-# Contact Form Serverless Function
+### Contact Form Serverless Function
 
 The second serverless function is going to accept the contact form data with the csrf token appended. Additionally, it will verify the hidden decoy password form field, and the csrf token. If both validations pass then the data can be saved.
 
@@ -460,4 +460,4 @@ The contact function first parses the request body using the [querystring parse]
 
 After verification, the contact form info is checked to make sure all the fields have a value. If they don't an error message is returned and displayed to the viewer with the client side errorHandler and errorLogger functions created earlier.
 
-At this point, with both verifications passing and valid form data, the data can be saved to the preferred data store. This could be a sql databasese or a nosql data store like azure storage. Once the save is complete the function will return a success message and the client side code will display that to the viewer.
+At this point, with both verifications passing and valid form data, the data can be saved to the preferred data store. This could be a sql database or a nosql data store like azure storage. Once the save is complete the function will return a success message and the client side code will display that to the viewer.

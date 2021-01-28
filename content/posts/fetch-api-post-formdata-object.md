@@ -12,7 +12,7 @@ imageAlt: Submit FormData with ES6 Fetch API
 
 The JavaScript [Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) API provides a utility to make [AJAX](https://developer.mozilla.org/en-US/docs/Web/Guide/AJAX) requests. This post will show how ES6 syntax can be used with Typescript and the Fetch API to submit an HTML form. Using the Fetch API in conjunction with other [Web API's](https://developer.mozilla.org/en-US/docs/Web/API) a post request can be sent, containing [FormData Objects](https://developer.mozilla.org/en-US/docs/Web/API/FormData/Using_FormData_Objects) in the body of the request.
 
-## HTML Form
+### HTML Form
 
 First we need to create an html file, let's call it index.html, with a form element to capture the input values we are going to submit using JavaScript.
 
@@ -39,7 +39,7 @@ First we need to create an html file, let's call it index.html, with a form elem
 
 Take note that the value for the form action attribute is a placeholder. In real usage this would be replaced with url that you would like to submit the form to. One of the inputs is type=hidden to show that we can submit hidden elements using this technique. Additionally there is one input to capture first name and a button to submit the form using the HTTP post method.
 
-## Typescript Form Submit
+### Typescript Form Submit
 
 Next we'll need to write form.ts so the TypeScript compiler can generate the JavaScript file, form.js, referenced in index.html. The code in form.ts will handle the form submit by making an AJAX request. If you haven't already now is a good time to read my other post [Compile Typescript with npm](/npm-compile-typescript/). There you will find instructions on how to install and configure TypeScript to accommodate the usage below.
 
@@ -78,7 +78,7 @@ document.body.addEventListener("submit", async function (event) {
 });
 ```
 
-## Fetch API Post Form Data
+### Fetch API Post Form Data
 
 Then the result variable is created and it is used to store the response sent following the Fetch request. The Fetch request returns a promise and must be awaited so that the result can be obtained. The URL passed into the Fetch method is set to the action of the form, and the options contains keys for method and body values. The form method, like the action, is available from HTMLFormElement.
 
