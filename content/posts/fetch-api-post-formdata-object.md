@@ -4,7 +4,6 @@ metaDescription: Create an HTML form and post formdata with the ES6 Fetch API an
 guid: b0ef09d3-6b55-4af0-a911-0682b359aa0e
 author: James Edwards
 tags:
-  - ES6
   - TypeScript
   - Web API
 image: fetch-api-post-formdata-object.png

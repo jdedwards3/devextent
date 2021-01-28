@@ -7,7 +7,6 @@ metaDescription:
 author: James Edwards
 tags:
   - Node.js
-  - ES6
   - TypeScript
 ---
 
