@@ -59,8 +59,16 @@ body {
 #header {
   grid-area: header;
   margin: 0 auto 30px auto;
+  img {
+    height: 75px;
+    width: 350px;
+  }
   @media (min-width: $breakpoint) {
     margin: 30px auto 0 auto;
+    img {
+      height: 90px;
+      width: 728px;
+    }
   }
 }
 
