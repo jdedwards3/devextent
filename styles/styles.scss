@@ -27,7 +27,7 @@ body {
   margin: 0 auto;
   display: grid;
   grid-template-columns: minmax(0, 1fr);
-  grid-template-rows: auto minmax(0, 1fr) auto;
+  grid-template-rows: auto auto minmax(0, 1fr) auto;
   grid-template-areas:
     "header"
     "main"
@@ -42,7 +42,7 @@ body {
     padding: 0 15px;
     padding-bottom: 30px;
     grid-template-columns: minmax(0, 1fr) 300px;
-    grid-template-rows: minmax(0, 1fr) auto;
+    grid-template-rows: auto minmax(0, 1fr) auto;
     grid-template-areas:
       "header header"
       "main aside"
@@ -263,7 +263,10 @@ body {
 
 #aside {
   grid-area: aside;
-  margin: 0 0 30px 0;
+  margin: 30px 0 30px 0;
+  @media (min-width: $breakpoint) {
+    margin-top: 0;
+  }
   #sidebar {
     @media (min-width: $breakpoint) {
       padding-top: 30px;
