@@ -1,9 +1,7 @@
 ---
 title: Convert Relative URL to Absolute URL with Node.js
 author: James Edwards
-metaDescription:
-  Convert link values containing relative URLs to use absolute URLs with the
-  cheerio npm package.
+metaDescription: Convert HTML link values containing relative URLs to use absolute URLs with the cheerio npm package.
 tags:
   - Node.js
   - TypeScript
