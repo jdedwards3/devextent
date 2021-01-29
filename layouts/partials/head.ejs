@@ -27,12 +27,21 @@
     name="robots"
     content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
   />
-  <link rel="manifest" href="/manifest.json" />
-  <meta name="theme-color" content="#000000" />
   <meta
     name="viewport"
     content="width=device-width, initial-scale=1, shrink-to-fit=no"
   />
+  <script type="text/javascript">
+    window._mNHandle = window._mNHandle || {};
+    window._mNHandle.queue = window._mNHandle.queue || [];
+    medianet_versionId = "3121199";
+  </script>
+  <script
+    src="https://contextual.media.net/dmedianet.js?cid=8CUF477P7"
+    async="async"
+  ></script>
+  <link rel="manifest" href="/manifest.json" />
+  <meta name="theme-color" content="#000000" />
   <meta
     property="og:title"
     content="<%= model.title ? model.title + ' | ' + config.siteName : config.siteName %>"

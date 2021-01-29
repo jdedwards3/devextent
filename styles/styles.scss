@@ -42,7 +42,7 @@ body {
   @media (min-width: $breakpoint) {
     padding: 0 15px;
     padding-bottom: 30px;
-    grid-template-columns: minmax(0, 1fr) 300px;
+    grid-template-columns: minmax(0, 1fr) 332px;
     grid-template-rows: auto minmax(0, 1fr) auto;
     grid-template-areas:
       "header header"
@@ -434,4 +434,11 @@ kbd {
   position: absolute;
   white-space: nowrap;
   width: 1px;
+}
+
+.ad-wrapper {
+  min-height: 100px;
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
 }
