@@ -27,10 +27,11 @@ body {
   margin: 0 auto;
   display: grid;
   grid-template-columns: minmax(0, 1fr);
-  grid-template-rows: auto auto minmax(0, 1fr) auto;
+  grid-template-rows: auto auto minmax(0, 1fr) auto auto;
   grid-template-areas:
     "header"
     "main"
+    "after-main"
     "aside"
     "footer";
   width: 100%;
@@ -46,6 +47,7 @@ body {
     grid-template-areas:
       "header header"
       "main aside"
+      "after-main after-main"
       "footer footer";
   }
   &.full-width {
@@ -74,7 +76,7 @@ body {
 
 #main {
   grid-area: main;
-  margin: 0 0 30px 0;
+  margin: 0 0 15px 0;
   @media (min-width: $breakpoint) {
     border-radius: 10px;
   }
@@ -263,7 +265,7 @@ body {
 
 #aside {
   grid-area: aside;
-  margin: 30px 0 30px 0;
+  margin: 15px 0 30px 0;
   @media (min-width: $breakpoint) {
     margin-top: 0;
   }
@@ -300,6 +302,15 @@ body {
   }
 }
 
+#after-main {
+  grid-area: after-main;
+  min-height: 15px;
+  .inner {
+    margin: 0 auto;
+    max-width: 1021px;
+  }
+}
+
 #footer {
   padding: 15px 0;
   grid-area: footer;
@@ -310,7 +321,7 @@ body {
   @media (prefers-color-scheme: dark) {
     background-color: #121212;
   }
-  margin: 30px 0;
+  margin: 15px 0;
   border-top: 1px solid lightgray;
   border-bottom: 1px solid lightgray;
   @media (min-width: $breakpoint) {
@@ -349,7 +360,7 @@ body {
 }
 
 .tag-list-container {
-  margin: 1em 0;
+  margin: 0 0 1em 0;
   .tag-list {
     margin: 0;
     padding: 0;

@@ -48,13 +48,28 @@
             <!-- title -->
             <% if (model.title) { %>
             <h1 class="title"><%= model.title %></h1>
+            <% if (!model.guid) { %>
+            <script type="text/javascript">
+              amzn_assoc_tracking_id = "devextent06-20";
+              amzn_assoc_ad_mode = "manual";
+              amzn_assoc_ad_type = "smart";
+              amzn_assoc_marketplace = "amazon";
+              amzn_assoc_region = "US";
+              amzn_assoc_design = "enhanced_links";
+              amzn_assoc_asins = "B088BC5HMM";
+              amzn_assoc_placement = "adunit";
+              amzn_assoc_linkid = "bb45c084db290b8e22c28990318e142f";
+            </script>
+            <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
+            <% } %>
+            <!--  -->
             <% } %>
             <!--  -->
             <% if (model.title && model.guid) { %>
             <!-- meta -->
             <%- include(config.folders.layouts.path + "/partials/postMeta") %>
+            <!--  -->
             <% } %>
-
             <!--  -->
             <% if (model.layout.startsWith("archives/")) { %>
             <!--  -->
@@ -73,6 +88,25 @@
       </main>
       <aside id="aside">
         <%- include(config.folders.layouts.path + '/partials/sidebar'); -%>
+      </aside>
+      <aside id="after-main">
+        <% if (model.tags || (model.guid && model.pagination &&
+        model.pagination.first) ) { %>
+        <div class="inner">
+          <script type="text/javascript">
+            amzn_assoc_tracking_id = "devextent06-20";
+            amzn_assoc_ad_mode = "manual";
+            amzn_assoc_ad_type = "smart";
+            amzn_assoc_marketplace = "amazon";
+            amzn_assoc_region = "US";
+            amzn_assoc_design = "enhanced_links";
+            amzn_assoc_asins = "B088BC5HMM";
+            amzn_assoc_placement = "adunit";
+            amzn_assoc_linkid = "bb45c084db290b8e22c28990318e142f";
+          </script>
+          <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
+        </div>
+        <% } %>
       </aside>
       <footer id="footer">
         <%- include(config.folders.layouts.path + '/partials/footer'); -%>
