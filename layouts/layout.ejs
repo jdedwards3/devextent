@@ -75,6 +75,16 @@
             <!--  -->
             <%- model.content %>
             <!--  -->
+            <% if (model.path.startsWith("posts/")) { %>
+
+            <p class="edit-post-line">
+              <a
+                href="https://github.com/jdedwards3/devextent/blob/main/content/<%= model.path %>/"
+                >Edit this post on GitHub</a
+              >.
+            </p>
+            <% } %>
+            <!--  -->
             <% } %>
             <!-- end content -->
             <% if (model.title && model.guid) { %>
