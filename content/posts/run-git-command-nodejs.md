@@ -57,7 +57,7 @@ At this point the package.json file should look similar to this (the package ver
 }
 ```
 
-**_NOTE_**: Since we are using TypeScript for this example, usually a type definition package is also required to be "npm installed" just like the actual package. In this case the Simple Git package includes the @types type declarations, so downloading a separate package is not needed.
+**Note**: Since we are using TypeScript for this example, usually a type definition package is also required to be "npm installed" just like the actual package. In this case the Simple Git package includes the @types type declarations, so downloading a separate package is not needed.
 
 ### Use Simple Git with TypeScript
 

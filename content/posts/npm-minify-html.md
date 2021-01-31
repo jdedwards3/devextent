@@ -33,7 +33,7 @@ There is more than one line in this text block.
 <div>some more text at the bottom</div>
 ```
 
-**_NOTE_**: A more common scenario than starting with a sample file might be applying the minification step to the output of a build process. If you are interested in seeing an example of how to generate HTML output, here is some info on how to [render EJS files with Node.js](/ejs-render-file/). The steps in that article can be extended to create a static site generator, and the html-minifier package can be included and used as part of the build process.
+**Note**: A more common scenario than starting with a sample file might be applying the minification step to the output of a build process. If you are interested in seeing an example of how to generate HTML output, here is some info on how to [render EJS files with Node.js](/ejs-render-file/). The steps in that article can be extended to create a static site generator, and the html-minifier package can be included and used as part of the build process.
 
 ### package.json
 

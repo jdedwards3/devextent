@@ -44,7 +44,7 @@ This is the base code needed for the Azure serverless function. Below we will lo
 
 ### Send Email with SendGrid and Node.js
 
-**_NOTE_**: This code is setup as if the request body contains two keys, one for emailAddress and one for emailMessage. Additionally, the SendGrid API key obtained earlier is accessed here from an environment variable. See the Azure documentation to [add an application setting](https://docs.microsoft.com/en-us/azure/azure-functions/functions-how-to-use-azure-function-app-settings). Application settings are accessed as environment variables in the serverless function code.
+**Note**: This code is setup as if the request body contains two keys, one for emailAddress and one for emailMessage. Additionally, the SendGrid API key obtained earlier is accessed here from an environment variable. See the Azure documentation to [add an application setting](https://docs.microsoft.com/en-us/azure/azure-functions/functions-how-to-use-azure-function-app-settings). Application settings are accessed as environment variables in the serverless function code.
 
 ```typescript
 import { AzureFunction, Context, HttpRequest } from "@azure/functions";
