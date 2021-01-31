@@ -50,42 +50,48 @@ This is the base code needed for the Azure serverless function. Below we will lo
 import { AzureFunction, Context, HttpRequest } from "@azure/functions";
 import * as querystring from "querystring";
 import * as SendGrid from "@sendgrid/mail";
-SendGrid.setApiKey(process.env["SendGridApiKey"] as string)
+SendGrid.setApiKey(process.env["SendGridApiKey"] as string);
 
-const httpTrigger: AzureFunction = async function(
+const httpTrigger: AzureFunction = async function (
   context: Context,
   req: HttpRequest
 ): Promise<void> {
-  context.log("HTTP trigger function processed a request.")
+  context.log("HTTP trigger function processed a request.");
 
   // form data submitted as query string in request body
-  const body = querystring.parse(req.body)
+  const body = querystring.parse(req.body);
 
   // check to make sure form was submitted with field data entered
-  if (body && body.emailAddress && body.emailMessage)
+  if (body && body.emailAddress && body.emailMessage) {
     // create an email options object
     const email = {
       to: process.env["SendGridApiKey"],
       from: "noreply@yourdomain.com",
       subject: "Hello! This email was sent with Node.js",
       html: `<div>This email is from: ${body.emailAddress}</div>
-      <div>message: ${body.emailMessage}</div>`
+      <div>message: ${body.emailMessage}</div>`,
+    };
 
-   try {
-     await SendGrid.send(email);
-   }catch(error){
-     throw error;
+    try {
+      await SendGrid.send(email);
 
-    context.res!.status = 200;
-    context.res!.body = {
-      message: "Email successful! Check email for the message."
+      context.res!.status = 200;
+      context.res!.body = {
+        message: "Email successful! Check email for the message.",
+      };
+    } catch (error) {
+      context.res!.status = 400;
+      context.res!.body = {
+        message: "An error occurred.",
+      };
     }
-  }else{
+  } else {
     context.res!.status = 400;
     context.res!.body = {
-     message: "Form submission is invalid. Please try again."
-   }
-}
+      message: "Form submission is invalid. Please try again.",
+    };
+  }
+};
 
 export default httpTrigger;
 ```
