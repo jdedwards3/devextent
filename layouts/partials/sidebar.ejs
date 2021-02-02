@@ -22,6 +22,7 @@
       <input type="text" name="q" id="search-str" />
       <button type="submit" class="submit">Search</button>
     </form>
+    <% if (model.tags || !model.guid || !model.slug || model.pagination) { %>
     <div class="ad-wrapper">
       <div id="408475226">
         <script type="text/javascript">
@@ -33,6 +34,7 @@
         </script>
       </div>
     </div>
+    <% } %>
     <!-- tags -->
     <% if (model.archives['tags']) { %>
     <div class="tag-list-container">

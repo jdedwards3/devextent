@@ -5,6 +5,7 @@
   <body>
     <!-- main -->
     <div class="grid-wrapper">
+      <% if (model.tags || !model.guid || !model.slug || model.pagination) { %>
       <header id="header">
         <a href="https://mbsy.co/3lfRTn" target="_blank">
           <picture>
@@ -19,6 +20,7 @@
               alt="DreamHost" /></picture
         ></a>
       </header>
+      <% } %>
       <main id="main">
         <article>
           <!-- image -->
@@ -176,14 +178,20 @@
       </main>
       <aside id="aside">
         <%- include(config.folders.layouts.path + '/partials/sidebar'); -%>
-        <a
-          rel="noopener noreferrer"
-          class="aside-banner"
-          href="https://mondaycom.grsm.io/jamesedwards3104"
-          target="_blank"
-        >
-          <img src="/images/monday-square.png" alt="monday.com"
-        /></a>
+        <!--  -->
+        <div class="aside-banner-container">
+          <% if (model.tags || !model.guid || !model.slug || model.pagination) {
+          %>
+          <a
+            rel="noopener noreferrer"
+            class="aside-banner"
+            href="https://mondaycom.grsm.io/jamesedwards3104"
+            target="_blank"
+          >
+            <img src="/images/monday-square.png" alt="monday.com"
+          /></a>
+          <% } %>
+        </div>
       </aside>
       <aside id="after-main">
         <% if (model.tags || (model.guid && model.pagination &&
