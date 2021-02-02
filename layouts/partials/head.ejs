@@ -9,7 +9,6 @@
       dataLayer.push(arguments);
     }
     gtag("js", new Date());
-
     gtag("config", "G-5GTWSGP1V3");
   </script>
   <meta charset="utf-8" />
@@ -31,6 +30,12 @@
     name="viewport"
     content="width=device-width, initial-scale=1, shrink-to-fit=no"
   />
+  <% if (model.tags || !model.guid || !model.slug || model.pagination) { %>
+  <script
+    data-ad-client="ca-pub-6747903070938911"
+    async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+  ></script>
   <script type="text/javascript">
     window._mNHandle = window._mNHandle || {};
     window._mNHandle.queue = window._mNHandle.queue || [];
@@ -40,6 +45,7 @@
     src="https://contextual.media.net/dmedianet.js?cid=8CUF477P7"
     async="async"
   ></script>
+  <% } %>
   <link rel="manifest" href="/manifest.json" />
   <meta name="theme-color" content="#000000" />
   <meta
