@@ -9,6 +9,8 @@ tags:
   - Git
   - Node.js
   - TypeScript
+image: run-git-command-nodejs.png
+imageAlt: <%= model.title %>
 ---
 
 If you're building a blog with the [Jamstack](https://jamstack.org/) your content might be stored in a git repository. This can help to reduce overhead, since a database is no longer required, but presents other interesting challenges like displaying post metadata. This may include the date the post was created or the date it was last updated, information that can be helpful to readers and enhances the display of the post in search engine results. We can use Node.js to retrieve the information that is stored in each commit, as well as run other git commands with the help of the [Simple Git](https://www.npmjs.com/package/simple-git) npm package.
