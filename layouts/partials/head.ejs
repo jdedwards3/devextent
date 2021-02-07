@@ -60,6 +60,17 @@
     content="<%= config.environment.domain + (model.image ? '/images/' + model.image : '/favicon_v2.png') %>"
   />
   <meta property="og:description" content="<%= model.metaDescription %>" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@devextent" />
+  <meta
+    name="twitter:title"
+    content="<%= model.title ? model.title + ' | ' + config.siteName : config.siteName %>"
+  />
+  <meta name="twitter:description" content="<%= model.metaDescription %>" />
+  <meta
+    name="twitter:image"
+    content="<%= config.environment.domain + (model.image ? '/images/' + model.image : '/favicon_v2.png') %>"
+  />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   <link rel="icon" href="/favicon_v2.ico" type="image/x-icon" />
   <link
