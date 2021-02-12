@@ -22,11 +22,11 @@ jobs:
       - name: Update Blobs
         uses: azure/cli@v1.0.0
         with:
+          azcliversion: 2.18.0
           inlineScript: |
             az storage blob sync -c '$web' -s _output --exclude-pattern '*.json' --connection-string '${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}'
 
-            az storage blob delete-batch -s '$web' --pattern '*.json' --connection-string '${{ secrets.
-            AZURE_STORAGE_CONNECTION_STRING }}'
+            az storage blob delete-batch -s '$web' --pattern '*.json' --connection-string '${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}'
 
             az storage blob upload-batch -d '$web' -s _output --pattern '*.json' --connection-string '${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}'
 
