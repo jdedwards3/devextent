@@ -1,6 +1,7 @@
 <ul id="post-list" class="<%= model.guid && model.pagination.current.number < 2 ? 'home' : '' %>">
   <% model.pagination.pageData.forEach(function(post, index) { %>
   <% if (index == 1 && model.guid && !model.pagination.first) { %>
+    <li>
       <script type="text/javascript">
         amzn_assoc_tracking_id = "devextent06-20";
         amzn_assoc_ad_mode = "manual";
@@ -13,6 +14,7 @@
         amzn_assoc_linkid = "bb45c084db290b8e22c28990318e142f";
       </script>
       <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
+    </li>
     <% } %>
   <li class="post-list-item">
     <% if (index < 1) { %>
