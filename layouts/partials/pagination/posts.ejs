@@ -113,6 +113,9 @@
       <a href="<%=`/${model.pagination.first.slug ? model.pagination.first.slug + "/" : model.pagination.first.slug}` %>"
         ><%= model.pagination.first.number %></a
       >
+      <% if (model.pagination.previous && model.pagination.previous.number - model.pagination.first.number > 1){ %>
+        ...
+      <% } %>
     </li>
     <% } %>
     <!--  -->
@@ -142,6 +145,9 @@
     <!--  -->
     <% if (model.pagination.last) { %>
     <li>
+      <% if (model.pagination.next && model.pagination.last.number - model.pagination.next.number > 1) { %>
+        ...
+      <% } %>
       <a href="<%= `/${model.pagination.last.slug ? model.pagination.last.slug + "/" : model.pagination.last.slug}` %>">
         <%= model.pagination.last.number %></a
       >
