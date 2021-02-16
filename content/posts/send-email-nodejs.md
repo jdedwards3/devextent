@@ -1,9 +1,7 @@
 ---
 title: Send Email with Node.js
 guid: 4b9f6847-9676-49e2-a49f-1f91a134fbef
-metaDescription:
-  Use the SendGrid npm package and a SendGrid API key to send emails with
-  Node.js and TypeScript.
+metaDescription: Use the SendGrid npm package and a SendGrid API key to send emails with Node.js and TypeScript.
 author: James Edwards
 tags:
   - Node.js

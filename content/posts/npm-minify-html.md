@@ -1,8 +1,6 @@
 ---
 title: Minify HTML with npm
-metaDescription:
-  Use the html-minifier npm package cli to minify an HTML file with npm
-  package.json scripts and Node.js
+metaDescription: Use the html-minifier npm package cli to minify an HTML file with npm package.json scripts and Node.js
 guid: 28f35562-d544-4eea-ba10-05be8e09120a
 author: James Edwards
 tags:

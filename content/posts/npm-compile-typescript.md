@@ -1,8 +1,6 @@
 ---
 title: Compile TypeScript with npm
-metaDescription:
-  Configure the TypeScript compiler with tsconfig.json, and compile TypeScript
-  into JavaScript using tsc command, Node.js, and npm package.json scripts.
+metaDescription: Configure the TypeScript compiler with tsconfig.json, and compile TypeScript into JavaScript using tsc command, Node.js, and npm package.json scripts.
 guid: 5ae4feed-1cee-469b-837d-5dbe38ae0227
 author: James Edwards
 tags:

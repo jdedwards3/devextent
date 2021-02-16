@@ -1,9 +1,7 @@
 ---
 title: Generate RSS Feed with Node.js
 guid: 79016133-6cc3-4639-977c-65a0cc69cf34
-metaDescription:
-  Use the xml, cheerio, and fs-extra npm packages with TypeScript to generate an
-  RSS feed for a Jamstack blog with Node.js
+metaDescription: Use the xml, cheerio, and fs-extra npm packages with TypeScript to generate an RSS feed for a Jamstack blog with Node.js
 author: James Edwards
 tags:
   - Node.js

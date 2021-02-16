@@ -1,8 +1,6 @@
 ---
 title: Build a Serverless Comment System for a Jamstack Blog
-metaDescription:
-  Use the GitHub REST API, Azure Serverless Functions, and Node.js to post and
-  pre-render Jamstack blog comments without a database.
+metaDescription: Use the GitHub REST API, Azure Serverless Functions, and Node.js to post and pre-render Jamstack blog comments without a database.
 guid: 0fe42a74-7cbf-439a-b403-31bdc6c25ad8
 author: James Edwards
 tags:

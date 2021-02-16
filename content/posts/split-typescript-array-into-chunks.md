@@ -1,9 +1,7 @@
 ---
-title: Split a TypeScript Array Into Chunks With a Generic Reduce Method
+title: Split a TypeScript Array into Chunks with a Generic Reduce Method
 author: James Edwards
-metaDescription:
-  Split a TypeScript array into smaller individual chunks with the reduce()
-  method to prevent the EMFILE error from crashing the node.js process.
+metaDescription: Split a TypeScript array into smaller individual chunks with the reduce method to prevent the EMFILE error from crashing the node.js process.
 guid: 6381b596-958b-4a9f-b1a7-862d250d4831
 tags:
   - Node.js

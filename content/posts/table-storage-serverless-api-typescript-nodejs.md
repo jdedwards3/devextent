@@ -1,8 +1,6 @@
 ---
 title: Use Azure Table Storage with Azure Serverless Functions and Node.js
-metaDescription: Insert, retrieve, update, and delete entities from
-  Azure Table Storage using the azure-storage npm package and Azure Serverless
-  TypeScript Functions with Node.js.
+metaDescription: Insert, retrieve, update, and delete entities from Azure Table Storage using the azure-storage npm package and Azure Serverless TypeScript Functions with Node.js.
 author: James Edwards
 tags:
   - Node.js
