@@ -530,7 +530,7 @@ if (
 
 Since this webhook activates on any event regarding a pull request, whether that be opening or closing, we need to make sure that this code only runs when the pull request is closed. Secondly, the pull request branch needs to match the main branch so that pull requests from other branches are ignored. Lastly, the merged_at value is checked to make sure this pull request has been merged before closing. If the pull request is closed and not merged (the comment is spam) we can ignore the following post request sent by GitHub.
 
-In addition to checking the payload properties shown above, it is a good idea to secure the webhook to make sure the serverless function is only activating when a request is sent from GitHub. This can prevent unwanted requests from being processed, and is a good idea to include when running this code in a production environment.
+In addition to checking the payload properties shown above, it is a good idea to [secure the webhook](/secure-github-webhook-nodejs/) to make sure the serverless function is only activating when a request is sent from GitHub. This can prevent unwanted requests from being processed, and is a good idea to include when running this code in a production environment.
 
 ### Add Public and Private GitHub Remotes
 
