@@ -116,6 +116,9 @@ body {
     }
 
     .article-content-wrapper {
+      &:first-of-type {
+        margin-bottom: 15px;
+      }
       .title {
         padding: 0;
       }
@@ -152,7 +155,7 @@ body {
         &:first-of-type {
           margin-bottom: 15px;
         }
-        &:nth-of-type(3) {
+        &:nth-of-type(2) {
           border-top: 1px solid lightgray;
         }
       }
@@ -170,7 +173,7 @@ body {
               }
             }
           }
-          &:nth-of-type(3) {
+          &:nth-of-type(2) {
             border-top-right-radius: 10px;
             border-top-left-radius: 10px;
           }
@@ -318,7 +321,6 @@ body {
   min-height: 15px;
   .inner {
     margin: 0 auto;
-    max-width: 1021px;
   }
 }
 
@@ -470,22 +472,6 @@ kbd {
   font-size: 12px;
   margin-top: 15px;
   margin-bottom: -10px;
-}
-
-.content-banner {
-  margin: 15px auto;
-  text-align: center;
-  max-width: 100%;
-  overflow-x: hidden;
-  div:first-child {
-    max-height: 90px;
-    width: 100%;
-  }
-}
-
-.aside-banner-container {
-  max-width: 300px;
-  margin: 0 auto;
 }
 
 hr {

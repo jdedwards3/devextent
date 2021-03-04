@@ -1,24 +1,5 @@
 <ul id="post-list" class="<%= model.guid && model.pagination.current.number < 2 ? 'home' : '' %>">
   <% model.pagination.pageData.forEach(function(post, index) { %>
-  <% if (index == 1 && model.guid && !model.pagination.first) { %>
-    <li>
-      <div class="content-banner">
-        <div id="408475226">
-          <script>
-            try {
-              window._mNHandle.queue.push(function () {
-                window._mNDetails.loadTag(
-                  "408475226",
-                  "728x90",
-                  "408475226"
-                );
-              });
-            } catch (error) {}
-          </script>
-        </div>
-      </div>
-    </li>
-    <% } %>
   <li class="post-list-item">
     <% if (index < 1) { %>
     <!-- image -->
