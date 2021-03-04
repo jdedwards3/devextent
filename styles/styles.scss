@@ -300,11 +300,15 @@ body {
       }
     }
   }
-  .aside-banner {
-    margin-top: 30px;
-    display: block;
-    img {
-      margin: 0 auto;
+  .aside-inner-container {
+    max-width: 300px;
+    margin: 0 auto;
+    .aside-inner {
+      margin-top: 30px;
+      display: block;
+      img {
+        margin: 0 auto;
+      }
     }
   }
 }
@@ -351,7 +355,7 @@ body {
       padding-right: 10px;
     }
   }
-  .social-icons {
+  .footer-list-icons {
     margin: 0;
     list-style-type: none;
     display: flex;
@@ -444,7 +448,7 @@ kbd {
   width: 1px;
 }
 
-.ad-wrapper {
+.sidebar-image-wrapper {
   text-align: center;
   margin-bottom: 10px;
   a {
