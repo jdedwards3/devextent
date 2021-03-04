@@ -20,7 +20,7 @@ Make sure to have [node.js](https://nodejs.org/en/) and [npm](https://docs.npmjs
 }
 ```
 
-This will permit the use of [ECMAScript modules](https://nodejs.org/api/esm.html) in the code, specifically it will allow for the use of [es module imports](https://nodejs.org/api/esm.html#esm_import_specifiers) from npm packages. After that we need to install TypeScript, so run the command <kbd>npm install typescript --save</kbd> and then run the command <kbd>npm install @types/node --save-dev</kbd>. At this point also go ahead and add a new script property called "start", that will [initiate the TypeScript compiler and run the JavaScript output with Node.js](/npm-compile-typescript).
+This will permit the use of [ECMAScript modules](https://nodejs.org/api/esm.html) in the code, specifically it will allow for the use of [es module imports](https://nodejs.org/api/esm.html#esm_import_specifiers) from npm packages. After that we need to install TypeScript, so run the command <kbd>npm install typescript --save</kbd> and then run the command <kbd>npm install @types/node --save-dev</kbd>. At this point also go ahead and add a new script property called "start", that will [initiate the TypeScript compiler and run the JavaScript output with Node.js](/npm-compile-typescript/).
 
 The package.json file should look similar to this:
 
