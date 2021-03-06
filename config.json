@@ -4,8 +4,7 @@
   "version": "0.0.1",
   "saveContentGuid": { "enabled": true },
   "typescript": {
-    "enabled": true,
-    "ignoreGlobs": ["functions"]
+    "enabled": true
   },
   "sass": { "enabled": true },
   "folders": {
@@ -14,7 +13,6 @@
     "scripts": { "cacheBust": true },
     "styles": { "cacheBust": true }
   },
-  "comments": { "enabled": true },
   "environment": {
     "dev": {
       "domain": "http://localhost:3000"
