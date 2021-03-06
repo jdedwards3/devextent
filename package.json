@@ -2,7 +2,7 @@
   "name": "devextent",
   "version": "0.0.0",
   "dependencies": {
-    "@protolith/morphic": "^0.0.27"
+    "@protolith/morphic": "^0.0.29"
   },
   "scripts": {
     "dev": "cross-env morphicEnv=dev morphic",
