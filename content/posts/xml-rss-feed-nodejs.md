@@ -348,14 +348,17 @@ const $ = cheerio.load(post.content as string, {
 });
 
 // replace relative links with absolute
-$.root()
-  .find("a[href^='/'], img[src^='/']")
-  .each(function (this: cheerio.Element) {
-    const $this = $(this);
-    $this.attr("href", `YOUR-WEBSITE${$this.attr("href")}`);
-  });
+$("a[href^='/'], img[src^='/']").each(function (this: cheerio.Element) {
+  const $this = $(this);
+  if ($this.attr("href")) {
+    $this.attr("href", `YOUR-WEBSITE/${$this.attr("href")}`);
+  }
+  if ($this.attr("src")) {
+    $this.attr("src", `YOUR-WEBSITE/${$this.attr("src")}`);
+  }
+});
 
-const postContent = $.root().find("body").html() as string;
+const postContent = $("body").html() as string;
 ```
 
 Here is some more info on this technique to [convert relative urls to absolute urls](/relative-url-to-absolute-url-nodejs/). Make sure to also replace the description property of the feedItem with the postContent variable. The buildFeed function should now look like this:
@@ -377,14 +380,17 @@ function buildFeed(
       });
 
       // replace relative links with absolute
-      $.root()
-        .find("a[href^='/']")
-        .each(function (this: cheerio.Element) {
-          const $this = $(this);
-          $this.attr("href", `YOUR-WEBSITE${$this.attr("href")}`);
-        });
+      $("a[href^='/'], img[src^='/']").each(function (this: cheerio.Element) {
+        const $this = $(this);
+        if ($this.attr("href")) {
+          $this.attr("href", `YOUR-WEBSITE/${$this.attr("href")}`);
+        }
+        if ($this.attr("src")) {
+          $this.attr("src", `YOUR-WEBSITE/${$this.attr("src")}`);
+        }
+      });
 
-      const postContent = $.root().find("body").html() as string;
+      const postContent = $("body").html() as string;
 
       const feedItem = {
         item: [

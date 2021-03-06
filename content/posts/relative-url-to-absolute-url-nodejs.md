@@ -87,10 +87,10 @@ import fs from "fs";
 
   $("a[href^='/'], img[src^='/']").each(function (this: cheerio.Element) {
     const $this = $(this);
-    if ($this.attr.href) {
+    if ($this.attr("href")) {
       $this.attr("href", `YOUR-DOMAIN-HERE/${$this.attr("href")}`);
     }
-    if ($this.attr.src) {
+    if ($this.attr("src")) {
       $this.attr("src", `YOUR-DOMAIN-HERE/${$this.attr("src")}`);
     }
   });
