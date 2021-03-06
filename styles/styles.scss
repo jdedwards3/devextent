@@ -116,7 +116,7 @@ body {
     }
 
     .article-content-wrapper {
-      &:first-of-type {
+      &:first-of-type:not(:last-of-type) {
         margin-bottom: 15px;
       }
       .title {
@@ -334,7 +334,7 @@ body {
   @media (prefers-color-scheme: dark) {
     background-color: #121212;
   }
-  margin: 15px 0;
+  margin: 15px 0 0 0;
   border-top: 1px solid lightgray;
   border-bottom: 1px solid lightgray;
   @media (min-width: $breakpoint) {
