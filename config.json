@@ -17,9 +17,6 @@
     "dev": {
       "domain": "http://localhost:3000"
     },
-    "staging": {
-      "domain": ""
-    },
     "production": {
       "domain": "https://www.devextent.com",
       "minifyHtml": true,
