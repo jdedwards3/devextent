@@ -46,6 +46,26 @@
             <!-- title -->
             <% if (model.title) { %>
             <h1 class="title"><%= model.title %></h1>
+            <% if (!model.guid) { %>
+            <div class="image-content-wrapper">
+              <a
+                href="https://brand24.grsm.io/3104"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <picture>
+                  <source
+                    media="(max-width: 1079px)"
+                    srcset="/images/brand24-banner-sm.jpg" />
+                  <source
+                    media="(min-width: 1080px)"
+                    srcset="/images/brand24-banner-lg.jpg" />
+                  <img
+                    src="/images/brand24-banner-lg.jpg"
+                    alt="Brand24" /></picture
+              ></a>
+            </div>
+            <% } %>
             <!--  -->
             <% } %>
             <!--  -->
@@ -53,6 +73,24 @@
             <!-- meta -->
             <%- include(config.folders.layouts.path + "/partials/postMeta") %>
             <!--  -->
+          </div>
+          <div class="image-content-wrapper">
+            <a
+              href="https://brand24.grsm.io/3104"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <picture>
+                <source
+                  media="(max-width: 1079px)"
+                  srcset="/images/brand24-banner-sm.jpg" />
+                <source
+                  media="(min-width: 1080px)"
+                  srcset="/images/brand24-banner-lg.jpg" />
+                <img
+                  src="/images/brand24-banner-lg.jpg"
+                  alt="Brand24" /></picture
+            ></a>
           </div>
           <div class="article-content-wrapper">
             <!--  -->

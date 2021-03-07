@@ -1,5 +1,27 @@
 <ul id="post-list" class="<%= model.guid && model.pagination.current.number < 2 ? 'home' : '' %>">
   <% model.pagination.pageData.forEach(function(post, index) { %>
+    <% if (index == 1 && model.guid && !model.pagination.first) { %>
+      <li>
+        <div class="image-content-wrapper">
+          <a
+            href="https://brand24.grsm.io/3104"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <picture>
+              <source
+                media="(max-width: 1079px)"
+                srcset="/images/brand24-banner-sm.jpg" />
+              <source
+                media="(min-width: 1080px)"
+                srcset="/images/brand24-banner-lg.jpg" />
+              <img
+                src="/images/brand24-banner-lg.jpg"
+                alt="Brand24" /></picture
+          ></a>
+        </div>
+      </li>
+    <% } %>
   <li class="post-list-item">
     <% if (index < 1) { %>
     <!-- image -->
