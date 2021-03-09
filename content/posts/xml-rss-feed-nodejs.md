@@ -1,11 +1,12 @@
 ---
-title: Generate RSS Feed with Node.js
+title: Generate an RSS Feed with Node.js
 guid: 79016133-6cc3-4639-977c-65a0cc69cf34
 metaDescription: Use the xml, cheerio, and fs-extra npm packages with TypeScript to generate an RSS feed for a Jamstack blog with Node.js
 author: James Edwards
 tags:
   - Node.js
   - TypeScript
+  - XML
 ---
 
 An [RSS](https://en.wikipedia.org/wiki/RSS) feed is a convenient way to allow access to syndicated content in a standardized format that is easily shareable and discoverable. Recently I've been using [feedly](https://feedly.com/) to stay up to date with a variety of web development blogs. This got me interested in how to add an rss feed to a static website built with the [Jamstack](https://jamstack.org/), specifically how to generate an rss feed from blog post data with node.js and [TypeScript](https://www.typescriptlang.org/).
@@ -108,7 +109,7 @@ After configuring TypeScript, we need a way to transpile and then execute the ge
 
 The createRssFeed script will sequentially compile the TypeScript source file (index.ts) and then use node to execute the JavaScript output. If you try running the command <kbd>npm run createRssFeed</kbd> you will get an error, because the index.ts doesn't exist yet. Let's create that now.
 
-### Add node script
+### Node.js Script
 
 In the same folder as the package.json file create a new file named index.ts, and add the code below to make sure the setup is working.
 
@@ -124,7 +125,7 @@ import cheerio from "cheerio";
 
 Then run the createRssFeed command <kbd>npm run createRssFeed</kbd> and the output should print to the console the text "creating feed".
 
-### Generate rss feed
+### Generate RSS Feed
 
 With the setup working we can now begin to use the npm packages that we imported. The xml package accepts a feed object as it's configuration so we can add that to the createRssFeed function. The feedObject will be processed into an xml string and then the fs-extra package will be used to write the output to a file named feed.rss.
 
