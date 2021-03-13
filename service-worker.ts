@@ -4,7 +4,7 @@
 export type {};
 
 const cacheName = "::swdevextent";
-const version = "0.0.1";
+const version = "v0.0.1";
 
 declare const self: ServiceWorkerGlobalScope;
 
