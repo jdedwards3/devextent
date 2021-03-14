@@ -1,7 +1,7 @@
 {
   "siteName": "Dev Extent",
   "siteDescription": "JavaScript and Web Development Articles",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "saveContentGuid": { "enabled": true },
   "typescript": {
     "enabled": true
