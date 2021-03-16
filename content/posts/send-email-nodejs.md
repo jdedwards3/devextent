@@ -7,6 +7,8 @@ tags:
   - Node.js
   - Serverless
   - TypeScript
+image: send-email-nodejs.png
+imageAlt: Send email with Node.js using the SendGrid npm package
 ---
 
 There are a variety of ways to send an email with Node.js. One way is to utilize the email service offered by [SendGrid](https://sendgrid.com/). The [email API](https://sendgrid.com/solutions/email-api/) has a [free plan](https://sendgrid.com/pricing/), which does have a usage limit, specified on their website, but it should be enough for example purposes. To use the [SendGrid Mail Service npm package](https://www.npmjs.com/package/@sendgrid/mail), an API key is required which can be obtained by [creating a new SendGrid account](https://signup.sendgrid.com/).
