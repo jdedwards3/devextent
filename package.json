@@ -5,8 +5,8 @@
     "@protolith/morphic": "^0.0.31"
   },
   "scripts": {
-    "dev": "cross-env morphicEnv=dev morphic",
-    "serve": "cross-env morphicEnv=dev morphic --serve",
+    "dev": "cross-env morphicEnv=dev morphic --typecheck",
+    "serve": "cross-env morphicEnv=dev morphic --serve --typecheck",
     "build": "npx morphic"
   }
 }
