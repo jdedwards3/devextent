@@ -4,14 +4,14 @@
 export type {};
 
 const cacheName = "::swdevextent";
-const version = "v0.0.1";
+const version = "v1.1.0";
 
 declare const self: ServiceWorkerGlobalScope;
 
 self.addEventListener("install", function (event) {
   event.waitUntil(
     caches.open(version + cacheName).then(function (cache) {
-      return cache.addAll(["/offline/"]);
+      return cache.addAll(["/", "/offline/"]);
     })
   );
 });
@@ -48,7 +48,10 @@ self.addEventListener("fetch", function (event) {
 
   // For HTML requests, try the network first, fall back to the cache,
   // finally the offline page
-  if (request.headers.get("Accept")?.indexOf("text/html") !== -1) {
+  if (
+    request.headers.get("Accept")?.indexOf("text/html") !== -1 &&
+    request.url.startsWith(this.origin)
+  ) {
     // The request is text/html, so respond by caching the
     // item or showing the /offline offline
     event.respondWith(
@@ -68,23 +71,37 @@ self.addEventListener("fetch", function (event) {
           });
         }) as Promise<Response>
     );
-
     return;
   }
 
   // For non-HTML requests, look in the cache first, fall back to the network
   // If it's an image, render an X in an SVG.
-  event.respondWith(
-    caches.match(request).then(function (response) {
-      return (
-        response ||
-        fetch(request).catch(function () {
-          // If the request is for an image, show an offline placeholder
-          // if (request.headers.get('Accept').indexOf('image') !== -1) {
-          //   return new Response('<svg width="400" height="400" role="img" aria-labelledby="offline-title" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg"><title id="offline-title">Offline</title><g><line stroke="#666666" x1="0" y1="0" x2="400" y2="400"/><line stroke="#666666" x1="0" y1="400" x2="400" y2="0"/></g></svg>', { headers: { 'Content-Type': 'image/svg+xml' }});
-          // }
-        })
-      );
-    }) as Promise<Response>
-  );
+  if (
+    request.headers.get("Accept")?.indexOf("text/plain") === -1 &&
+    request.url.startsWith(this.origin)
+  ) {
+    event.respondWith(
+      caches.match(request).then(function (response) {
+        return (
+          response ||
+          fetch(request)
+            .then(function (response) {
+              const copy = response.clone();
+
+              if (
+                copy.headers.get("Content-Type")?.indexOf("text/plain") === -1
+              ) {
+                caches.open(version + cacheName).then(function (cache) {
+                  cache.put(request, copy);
+                });
+              }
+
+              return response;
+            })
+            .catch(function () {})
+        );
+      }) as Promise<Response>
+    );
+    return;
+  }
 });
