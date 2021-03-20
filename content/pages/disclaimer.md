@@ -7,7 +7,7 @@ guid: b720ec94-9e89-402f-8564-5a538d036aff
 If you require any more information or have any questions about our site's
 disclaimer, please feel free to contact us by email at admin@devextent.com
 
-## Disclaimers for Dev Extent
+### Disclaimers for Dev Extent
 
 All the information on this website - https://www.devextent.com - is published
 in good faith and for general information purpose only. Dev Extent does not make
@@ -31,12 +31,12 @@ different privacy policies and terms which are beyond our control. Please be
 sure to check the Privacy Policies of these sites as well as their "Terms of
 Service" before engaging in any business or uploading any information.
 
-## Consent
+### Consent
 
 By using our website, you hereby consent to our disclaimer and agree to its
 terms.
 
-## Update
+### Update
 
 Should we update, amend or make any changes to this document, those changes will
 be prominently posted here.

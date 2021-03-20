@@ -100,7 +100,7 @@ body {
       }
     }
     &
-      > #post-list:first-child
+      > .post-list:first-child
       > .post-list-item
       > .post-image.post-index:first-child {
       @media (min-width: $breakpoint) {
@@ -146,11 +146,11 @@ body {
       }
     }
   }
-  #post-list {
+  .post-list {
     margin: 0;
     padding: 0;
     list-style: none;
-    &.home {
+    &.home.featured {
       .post-list-item {
         &:first-of-type {
           margin-bottom: 30px;
@@ -173,10 +173,10 @@ body {
               }
             }
           }
-          &:nth-of-type(2) {
-            border-top-right-radius: 10px;
-            border-top-left-radius: 10px;
-          }
+          // &:nth-of-type(2) {
+          //   border-top-right-radius: 10px;
+          //   border-top-left-radius: 10px;
+          // }
         }
       }
     }
