@@ -155,7 +155,7 @@ body {
         &:first-of-type {
           margin-bottom: 30px;
         }
-        &:nth-of-type(3) {
+        &:nth-of-type(2) {
           border-top: 1px solid lightgray;
         }
       }
@@ -173,7 +173,7 @@ body {
               }
             }
           }
-          &:nth-of-type(3) {
+          &:nth-of-type(2) {
             border-top-right-radius: 10px;
             border-top-left-radius: 10px;
           }

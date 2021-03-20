@@ -5,26 +5,11 @@
   <body>
     <!-- main -->
     <div class="grid-wrapper">
-      <% if (model.tags || !model.guid || !model.slug || model.pagination) { %>
       <header id="header">
-        <a
-          href="https://mbsy.co/3lfRTn"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <picture>
-            <source
-              media="(max-width: 799px)"
-              srcset="/images/dreamhost-banner-sm.jpg" />
-            <source
-              media="(min-width: 800px)"
-              srcset="/images/dreamhost-banner-lg.png" />
-            <img
-              src="/images/dreamhost-banner-lg.png"
-              alt="DreamHost" /></picture
-        ></a>
+        <nav>
+          <a href="/">Dev Extent</a>
+        </nav>
       </header>
-      <% } %>
       <main id="main">
         <article>
           <!-- image -->
@@ -46,26 +31,6 @@
             <!-- title -->
             <% if (model.title) { %>
             <h1 class="title"><%= model.title %></h1>
-            <% if (!model.guid) { %>
-            <div class="image-content-wrapper">
-              <a
-                href="https://brand24.grsm.io/3104"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <picture>
-                  <source
-                    media="(max-width: 1079px)"
-                    srcset="/images/brand24-banner-sm.jpg" />
-                  <source
-                    media="(min-width: 1080px)"
-                    srcset="/images/brand24-banner-lg.jpg" />
-                  <img
-                    src="/images/brand24-banner-lg.jpg"
-                    alt="Brand24" /></picture
-              ></a>
-            </div>
-            <% } %>
             <!--  -->
             <% } %>
             <!--  -->
@@ -74,24 +39,7 @@
             <%- include(config.folders.layouts.path + "/partials/postMeta") %>
             <!--  -->
           </div>
-          <div class="image-content-wrapper">
-            <a
-              href="https://brand24.grsm.io/3104"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <picture>
-                <source
-                  media="(max-width: 1079px)"
-                  srcset="/images/brand24-banner-sm.jpg" />
-                <source
-                  media="(min-width: 1080px)"
-                  srcset="/images/brand24-banner-lg.jpg" />
-                <img
-                  src="/images/brand24-banner-lg.jpg"
-                  alt="Brand24" /></picture
-            ></a>
-          </div>
+
           <div class="article-content-wrapper">
             <!--  -->
             <% } %>
@@ -110,7 +58,7 @@
               <a
                 href="https://github.com/jdedwards3/devextent/blob/main/content/<%= model.path %>"
                 >Edit this post on GitHub</a
-              >.
+              >
             </p>
             <% } %>
             <!--  -->
@@ -123,24 +71,6 @@
       </main>
       <aside id="aside">
         <%- include(config.folders.layouts.path + '/partials/sidebar'); -%>
-        <!--  -->
-        <div class="aside-inner-container">
-          <% if (model.tags || !model.guid || !model.slug || model.pagination) {
-          %>
-          <a
-            class="aside-inner"
-            href="https://mondaycom.grsm.io/3104-pm"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              src="/images/monday-square.png"
-              width="300"
-              height="250"
-              alt="monday.com"
-          /></a>
-          <% } %>
-        </div>
       </aside>
       <footer id="footer">
         <%- include(config.folders.layouts.path + '/partials/footer'); -%>
