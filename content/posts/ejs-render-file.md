@@ -7,6 +7,8 @@ tags:
   - EJS
   - Node.js
   - TypeScript
+image: ejs-render-file.png
+imageAlt: Render an EJS template file into HTML with Node.js
 ---
 
 [EJS](https://ejs.co/) is a templating language that uses JavaScript to generate HTML. This post will illustrate how to use Node.js with TypeScript to render an EJS file into HTML markup. Please make sure you have [Node.js](https://nodejs.org/en/) and [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) installed first. If you are unfamiliar with Typescript please read my post describing how to [compile TypeScript with npm](/npm-compile-typescript/).
