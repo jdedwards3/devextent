@@ -72,6 +72,22 @@
       </main>
       <aside id="aside">
         <%- include(config.folders.layouts.path + '/partials/sidebar'); -%>
+        <!--  -->
+        <% if (model.tags) { %>
+        <div class="aside-inner-container">
+          <div class="aside-inner">
+            <ins
+              class="adsbygoogle"
+              style="display: inline-block; width: 300px; height: 250px"
+              data-ad-client="ca-pub-6747903070938911"
+              data-ad-slot="4784056619"
+            ></ins>
+            <script>
+              (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+          </div>
+        </div>
+        <% } %>
       </aside>
       <footer id="footer">
         <%- include(config.folders.layouts.path + '/partials/footer'); -%>
