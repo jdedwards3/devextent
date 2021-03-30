@@ -396,7 +396,18 @@ body {
 .image-content-wrapper {
   display: flex;
   justify-content: center;
-  margin: 0 auto 30px auto;
+  @media (min-width: 1080px) {
+    margin: 0 auto 30px auto;
+  }
+
+  .adsbygoogle.large {
+    display: inline-block;
+    width: 728px;
+    height: 90px;
+    @media (max-width: 1079px) {
+      display: none;
+    }
+  }
 }
 
 p {
