@@ -7,32 +7,34 @@
     <div class="grid-wrapper full-width">
       <%- include(config.folders.layouts.path + '/partials/header'); -%>
       <main id="main">
-        <!-- image -->
-        <% if (model.image) { %>
-        <img
-          height="350"
-          width="927"
-          class="post-image"
-          alt="<%= model.imageAlt %>"
-          src="/images/<%= model.image %>"
-        />
-        <% } %>
-        <!-- content -->
-        <% if (model.title && model.guid) { %>
-        <div
-          class="article-content-wrapper <%= model.image ? 'has-image' : '' %>"
-        >
+        <article>
+          <!-- image -->
+          <% if (model.image) { %>
+          <img
+            height="350"
+            width="927"
+            class="post-image"
+            alt="<%= model.imageAlt %>"
+            src="/images/<%= model.image %>"
+          />
           <% } %>
-          <!-- title -->
-          <% if (model.title) { %>
-          <h1><%= model.title %></h1>
-          <% } %>
-          <!-- mainContent-->
-          <%- model.content %>
-          <!-- end content -->
+          <!-- content -->
           <% if (model.title && model.guid) { %>
-        </div>
-        <% } %>
+          <div
+            class="article-content-wrapper <%= model.image ? 'has-image' : '' %>"
+          >
+            <% } %>
+            <!-- title -->
+            <% if (model.title) { %>
+            <h1><%= model.title %></h1>
+            <% } %>
+            <!-- mainContent-->
+            <%- model.content %>
+            <!-- end content -->
+            <% if (model.title && model.guid) { %>
+          </div>
+          <% } %>
+        </article>
       </main>
       <footer id="footer">
         <%- include(config.folders.layouts.path + '/partials/footer'); -%>

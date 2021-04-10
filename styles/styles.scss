@@ -58,11 +58,6 @@ body {
       "footer";
     grid-template-columns: 1fr;
     grid-template-rows: auto minmax(0, 1fr) auto;
-    #header {
-      border-bottom: 1px solid lightgray;
-      padding-bottom: 30px;
-      margin-bottom: 30px;
-    }
     h1 {
       margin-bottom: 30px;
     }
@@ -547,9 +542,6 @@ form {
   margin-bottom: 60px;
   display: flex;
   flex-direction: column;
-  max-width: 66.67%;
+  min-width: 320px;
   align-items: baseline;
-  @media (min-width: $breakpoint) {
-    max-width: 40%;
-  }
 }
