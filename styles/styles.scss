@@ -68,13 +68,21 @@ body {
   grid-area: header;
   margin: 0 auto 30px auto;
   width: 100%;
-  img {
-    height: 75px;
-    width: 350px;
+
+  &.post-header {
+    margin: 0 auto;
+    @media (min-width: $breakpoint) {
+      margin-top: 15px;
+    }
   }
-  nav {
-    display: flex;
-    justify-content: space-around;
+  .adsbygoogle {
+    @media (max-width: $breakpoint) {
+      display: none;
+    }
+    margin: 0 auto;
+    display: block;
+    width: 728px;
+    height: 90px;
   }
   @media (min-width: $breakpoint) {
     margin: 30px auto 0 auto;
@@ -94,6 +102,9 @@ body {
   article {
     @media (min-width: $breakpoint) {
       padding-top: 30px;
+      &.post-article {
+        padding-top: 15px;
+      }
     }
     & > h1.title:first-child {
       margin-top: 0;
@@ -285,10 +296,18 @@ body {
   #sidebar {
     @media (min-width: $breakpoint) {
       padding-top: 30px;
+      &.post-sidebar {
+        padding-top: 15px;
+      }
     }
     #sidebar-inner {
       .sidebar-list {
-        margin-bottom: 30px;
+        margin-bottom: 15px;
+        display: flex;
+        justify-content: space-between;
+        li {
+          margin-right: 10px;
+        }
       }
       background-color: #fff;
       @media (prefers-color-scheme: dark) {
@@ -420,11 +439,12 @@ body {
 }
 
 .image-content-wrapper {
-  display: flex;
-  justify-content: center;
-
+  @media (max-width: 1079px) {
+    display: none;
+  }
   .adsbygoogle.large {
     display: block;
+    margin: 0 auto;
     width: 728px;
     height: 90px;
     @media (max-width: 1079px) {
@@ -521,9 +541,6 @@ ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-  }
-  &.center {
-    text-align: center;
   }
   margin-top: 0;
 }

@@ -5,9 +5,13 @@
   <body>
     <!-- main -->
     <div class="grid-wrapper">
+      <% if (model.tags){ %>
+      <!--  -->
       <%- include(config.folders.layouts.path + '/partials/header'); -%>
+      <!--  -->
+      <% } %>
       <main id="main">
-        <article>
+        <article class="<%= model.tags ? 'post-article' : '' %>">
           <!-- image -->
           <% if (model.image) { %>
           <img
