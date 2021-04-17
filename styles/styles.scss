@@ -75,15 +75,6 @@ body {
       margin-top: 15px;
     }
   }
-  .adsbygoogle {
-    @media (max-width: $breakpoint) {
-      display: none;
-    }
-    margin: 0 auto;
-    display: block;
-    width: 728px;
-    height: 90px;
-  }
   @media (min-width: $breakpoint) {
     margin: 30px auto 0 auto;
     img {
@@ -434,21 +425,6 @@ body {
         display: inline-block;
         padding: 2px 16px;
       }
-    }
-  }
-}
-
-.image-content-wrapper {
-  @media (max-width: 1079px) {
-    display: none;
-  }
-  .adsbygoogle.large {
-    display: block;
-    margin: 0 auto;
-    width: 728px;
-    height: 90px;
-    @media (max-width: 1079px) {
-      display: none;
     }
   }
 }
