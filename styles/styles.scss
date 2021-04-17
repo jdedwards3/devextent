@@ -68,11 +68,11 @@ body {
   grid-area: header;
   margin: 0 auto 30px auto;
   width: 100%;
-
-  &.post-header {
-    margin: 0 auto;
-    @media (min-width: $breakpoint) {
-      margin-top: 15px;
+  .header-list {
+    display: flex;
+    justify-content: center;
+    li {
+      margin-right: 10px;
     }
   }
   @media (min-width: $breakpoint) {
@@ -93,9 +93,6 @@ body {
   article {
     @media (min-width: $breakpoint) {
       padding-top: 30px;
-      &.post-article {
-        padding-top: 15px;
-      }
     }
     & > h1.title:first-child {
       margin-top: 0;
@@ -287,9 +284,6 @@ body {
   #sidebar {
     @media (min-width: $breakpoint) {
       padding-top: 30px;
-      &.post-sidebar {
-        padding-top: 15px;
-      }
     }
     #sidebar-inner {
       .sidebar-list {
