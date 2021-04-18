@@ -323,10 +323,18 @@ body {
   }
 
   .aside-inner-container:last-of-type {
-    max-width: 300px;
+    .help-text {
+      text-align: center;
+      color: #020202;
+    }
+    background-color: #f69225;
+    border-radius: 10px;
     margin: 15px auto 0 auto;
     .aside-inner {
       display: block;
+      max-width: 300px;
+      margin: 0 auto;
+      padding-bottom: 15px;
       .adsbygoogle {
         display: block;
         width: 300px;
@@ -522,6 +530,12 @@ form {
       width: 100%;
     }
   }
+}
+
+.help-text {
+  font-size: 0.75rem;
+  padding: 0px;
+  margin: 0;
 }
 
 #mc-embedded-subscribe-form {
