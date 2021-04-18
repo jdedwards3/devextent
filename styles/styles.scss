@@ -277,7 +277,7 @@ body {
 
 #aside {
   grid-area: aside;
-  margin: 15px 0 0 0;
+  margin: 15px 0;
   @media (min-width: $breakpoint) {
     margin-top: 0;
   }
@@ -318,23 +318,20 @@ body {
     }
   }
 
-  #sidebar:last-of-type {
-    margin-bottom: 15px;
-  }
-
   .aside-inner-container:last-of-type {
-    .help-text {
-      text-align: center;
-      color: #020202;
-    }
-    background-color: #f69225;
-    border-radius: 10px;
     margin: 15px auto 0 auto;
+    @media (max-width: 799px) {
+      display: none;
+    }
     .aside-inner {
-      display: block;
-      max-width: 300px;
+      padding: 0 15px 15px 15px;
       margin: 0 auto;
-      padding-bottom: 15px;
+      .help-text {
+        text-align: center;
+        color: #020202;
+      }
+      background-color: #f69225;
+      border-radius: 10px;
       .adsbygoogle {
         display: block;
         width: 300px;
