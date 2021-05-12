@@ -7,6 +7,10 @@ export default class Main {
           console.log("Service Worker Registered");
         });
     }
+
+    document
+      .querySelectorAll("pre")
+      .forEach((item) => item.setAttribute("tabindex", "0"));
   }
 }
 
