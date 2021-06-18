@@ -3,9 +3,7 @@
   "siteDescription": "JavaScript and Web Development Articles",
   "version": "1.1.1",
   "saveContentGuid": { "enabled": true },
-  "typescript": {
-    "enabled": true
-  },
+  "typescript": { "enabled": true },
   "sass": { "enabled": true },
   "folders": {
     "images": { "copyToOutput": true },
@@ -23,7 +21,8 @@
       "sitemap": true,
       "rssFeed": true,
       "jsonApi": true,
-      "inlineSassOutput": true
+      "inlineSassOutput": true,
+      "serviceWorker": { "enabled": true }
     }
   },
   "archiveData": [

@@ -89,6 +89,7 @@
         <%- include(config.folders.layouts.path + '/partials/footer'); -%>
       </footer>
     </div>
+    <%- model.serviceWorkerRegistration %>
     <script
       type="module"
       src="/scripts/<%= config.version %>/script.js"
