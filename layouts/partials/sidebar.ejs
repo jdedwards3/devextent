@@ -1,8 +1,60 @@
 <div id="sidebar">
-  <div id="sidebar-inner">
-    <ul class="sidebar-list style-none">
-      <li><a href="/jobs/">Job Listings</a></li>
-    </ul>
+  <div class="sidebar-inner">
+    <p>Get updates from Dev Extent</p>
+    <form
+      action="https://devextent.us4.list-manage.com/subscribe/post?u=cea6aedcb070461640487756a&amp;id=daf01c194f"
+      method="post"
+      id="mc-embedded-subscribe-form"
+      name="mc-embedded-subscribe-form"
+      class="validate"
+      target="_blank"
+      novalidate
+    >
+      <input
+        type="email"
+        value=""
+        name="EMAIL"
+        class="email"
+        id="mce-EMAIL"
+        placeholder="email address"
+        required
+      />
+
+      <input
+        type="submit"
+        value="Sign Up"
+        name="subscribe"
+        id="mc-embedded-subscribe"
+        class="button"
+      />
+      <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+      <div style="position: absolute; left: -5000px" aria-hidden="true">
+        <input
+          type="text"
+          name="b_cea6aedcb070461640487756a_daf01c194f"
+          tabindex="-1"
+          value=""
+        />
+      </div>
+    </form>
+  </div>
+  <!--  -->
+  <% if (model.tags) { %>
+  <div class="aside-inner-container">
+    <div class="aside-inner ad-sidebar">
+      <p class="help-text">advertisement</p>
+      <ins
+        class="adsbygoogle"
+        data-ad-client="ca-pub-6747903070938911"
+        data-ad-slot="4784056619"
+      ></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+  </div>
+  <% } %>
+  <div class="sidebar-inner">
     <form
       id="search-form"
       action="https://www.google.com/search"

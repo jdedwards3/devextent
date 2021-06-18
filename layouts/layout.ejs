@@ -21,7 +21,16 @@
           <!-- content -->
           <% if (model.title && model.guid) { %>
           <div
-            class="article-content-wrapper <%= model.image ? 'has-image' : '' %>"
+            class="
+              article-content-wrapper
+              <%=
+              model.image
+              ?
+              'has-image'
+              :
+              ''
+              %>
+            "
           >
             <% } %>
             <!-- title -->
@@ -68,22 +77,6 @@
       <aside id="aside">
         <h2 class="visually-hidden">Sidebar</h2>
         <%- include(config.folders.layouts.path + '/partials/sidebar'); -%>
-        <!--  -->
-        <% if (model.tags) { %>
-        <div class="aside-inner-container">
-          <div class="aside-inner ad-sidebar">
-            <p class="help-text">advertisement</p>
-            <ins
-              class="adsbygoogle"
-              data-ad-client="ca-pub-6747903070938911"
-              data-ad-slot="4784056619"
-            ></ins>
-            <script>
-              (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
-          </div>
-        </div>
-        <% } %>
       </aside>
       <footer id="footer">
         <%- include(config.folders.layouts.path + '/partials/footer'); -%>
