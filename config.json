@@ -8,7 +8,6 @@
   },
   "sass": { "enabled": true },
   "folders": {
-    "content": { "rootFiles": { "copyToOutput": true } },
     "images": { "copyToOutput": true },
     "scripts": { "cacheBust": true },
     "styles": { "cacheBust": true }
