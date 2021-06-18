@@ -241,7 +241,7 @@ body {
       font-weight: bold;
     }
     a {
-      padding: 0 16px;
+      padding: 0 14px;
       &.older {
         &:after {
           content: "";
@@ -285,14 +285,9 @@ body {
     @media (min-width: $breakpoint) {
       padding-top: 30px;
     }
-    #sidebar-inner {
-      .sidebar-list {
-        margin-bottom: 15px;
-        display: flex;
-        justify-content: space-between;
-        li {
-          margin-right: 10px;
-        }
+    .sidebar-inner {
+      &:last-of-type {
+        margin-top: 15px;
       }
       background-color: #fff;
       @media (prefers-color-scheme: dark) {
@@ -318,8 +313,8 @@ body {
     }
   }
 
-  .aside-inner-container:last-of-type {
-    margin: 15px auto 0 auto;
+  .aside-inner-container {
+    margin: 15px auto 15px auto;
     @media (max-width: 799px) {
       display: none;
     }
@@ -386,7 +381,7 @@ body {
     }
   }
   .footer-list-icons {
-    margin: 0;
+    margin: 0 0 15px 0;
     list-style-type: none;
     display: flex;
     padding: 0;
@@ -551,9 +546,8 @@ form {
 
 #mc-embedded-subscribe-form {
   margin: 0 auto;
-  margin-bottom: 60px;
   display: flex;
   flex-direction: column;
-  min-width: 320px;
+  min-width: 300px;
   align-items: baseline;
 }
