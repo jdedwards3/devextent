@@ -6,6 +6,7 @@ author: James Edwards
 tags:
   - SASS
   - Node.js
+image: dart-sass-javascript-implementation-npm-compile-sass.png
 ---
 
 _This post is an updated version of a previous post containing instructions on [how to compile sass with the node-sass npm package](/npm-compile-sass/), which is now deprecated._
