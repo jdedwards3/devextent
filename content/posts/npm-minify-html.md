@@ -6,6 +6,7 @@ author: James Edwards
 tags:
   - HTML
   - Node.js
+image: npm-minify-html.png
 ---
 
 The [html-minifier](https://www.npmjs.com/package/html-minifier) npm package provides a command line interface that makes it possible to minify HTML. This can be useful when working with a site built with the [Jamstack](https://jamstack.org/). One example of this scenario could be a site that uses a static site generator to output prerendered HTML files at build time. In this case, and especially when serving lots of content, minifying the HTML output can result in cost savings as well as performance improvements.
