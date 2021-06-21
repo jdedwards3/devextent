@@ -7,6 +7,7 @@ tags:
   - Serverless
   - Git
   - Node.js
+image: jamstack-blog-serverless-comment-system.png
 ---
 
 [Jamstack](https://jamstack.org/) blogs, or otherwise static sites that are built with prerendered markup can load quickly and cost less to run, however one potential drawback of a serverless approach for a blog can be the lack of a content management system. Without using a database or a headless content management system, blogs built with the Jamstack are most likely storing their content in a git repository, and this git-centric approach to development provides an interesting pathway for storing and managing blog comments. With some help from [Octokit](https://www.npmjs.com/package/@octokit/rest), the REST API client provided by GitHub, the [Simple Git](https://www.npmjs.com/package/simple-git) npm package, [SendGrid](https://www.npmjs.com/package/@sendgrid/mail) email service, and [Azure Serverless Functions](https://docs.microsoft.com/en-us/azure/azure-functions/) comment system can be built that includes comment moderation and email notifications.
