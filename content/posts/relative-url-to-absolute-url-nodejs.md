@@ -7,6 +7,7 @@ tags:
   - TypeScript
   - HTML
 guid: 9e7ec00f-d165-41d5-b007-73486ff4f119
+image: relative-url-to-absolute-url-nodejs.png
 ---
 
 Let's say you are building a site with the [Jamstack](https://jamstack.org/) and you want to [use node.js to generate the rss feed for your site](/xml-rss-feed-nodejs/). In doing so you realize that your post content contains relative links when checking with the validator provided by the [W3C Feed validation service](https://validator.w3.org/), and it indicates [elements should not contain relative URL references](https://validator.w3.org/feed/docs/warning/ContainsRelRef.html). In order to make sure the RSS feed is valid, and only containing absolute URLs, we can use the [cheerio npm package](https://www.npmjs.com/package/cheerio) to parse an HTML source and transform relative anchor links and image sources to absolute URLs. To demonstrate this we can create an HTML file that represents sample post content.
