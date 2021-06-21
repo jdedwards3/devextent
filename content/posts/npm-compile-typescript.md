@@ -6,7 +6,7 @@ author: James Edwards
 tags:
   - TypeScript
   - Node.js
-image: npm-compile-typescript.png
+image: npm-compile-typescript-2.png
 imageAlt: Compile TypeScript into JavaScript
 ---
 
