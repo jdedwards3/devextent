@@ -7,6 +7,7 @@ tags:
   - Babel
   - Web API
 guid: 374b02e7-fcff-4f37-a1ba-d78784f95801
+image: create-service-worker-typescript.png
 ---
 
 The [Service Worker API](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API) is available to use in all major browsers. Service Workers are JavaScript files that contain event driven worker code, that do not run on the main thread of the browser. They are used as a proxy for network requests, more specifically, service workers can be used to intercept requests and modify them as well as cache responses. In addition to caching responses a service worker can be used to enhance the user experience of your website by displaying an offline page when there is no network connection available.
