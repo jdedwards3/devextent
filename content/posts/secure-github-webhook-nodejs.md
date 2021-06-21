@@ -6,6 +6,7 @@ metaDescription: Secure an Azure Node.js Severless Function HTTP endpoint to acc
 tags:
   - Node.js
   - Serverless
+image: secure-github-webhook-nodejs.png
 ---
 
 GitHub provides [webhooks](https://docs.github.com/en/developers/webhooks-and-events) that can send a [POST](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/POST) request when a predetermined event is triggered. There are many different [GitHub event types](https://docs.github.com/en/developers/webhooks-and-events/github-event-types), and a common event to integrate into workflows is the [PullRequestEvent](https://docs.github.com/en/developers/webhooks-and-events/github-event-types#pullrequestevent). Any time a pull request has event activity of the following action types:
