@@ -7,7 +7,7 @@ tags:
   - Git
   - Node.js
   - TypeScript
-image: run-git-command-nodejs.png
+image: run-git-command-nodejs-2.png
 imageAlt: <%= model.title %>
 ---
 
