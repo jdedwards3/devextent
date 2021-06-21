@@ -7,6 +7,7 @@ tags:
   - TypeScript
   - Serverless
 guid: 59fb5474-88ec-4838-9297-8558dcd5dd57
+image: table-storage-serverless-api-typescript-nodejs.png
 ---
 
 Before developing with [Azure Serverless Functions](https://azure.microsoft.com/en-us/services/functions/) and [Azure Table storage](https://azure.microsoft.com/en-us/services/storage/tables/) locally, there are some tools required to emulate [Azure Storage](https://azure.microsoft.com/en-us/services/storage/) and provide a run-time environment for the Node.js serverless functions. Please make sure the prerequisites are set up before running the example code that follows.
