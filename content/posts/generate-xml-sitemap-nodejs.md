@@ -7,6 +7,7 @@ tags:
   - TypeScript
 guid: 329a86d4-a32e-4840-b1b9-1eeaedaf08e6
 metaDescription: Use the xml npm package and TypeScript with ES Modules to generate an xml string and write it to a sitemap.xml file with Node.js.
+image: generate-xml-sitemap-nodejs.png
 ---
 
 An xml sitemap informs search engines with information regarding the structure of a website and which pages should be available to be indexed in search results. The [xml sitemap](https://developers.google.com/search/docs/advanced/sitemaps/overview) file includes the url location for all the pages included and the date the page was last modified. If you are building a blog website it is especially important to include a sitemap file containing information about all the blog posts. Recently more blogs are being built with the [Jamstack](https://jamstack.org/), and since there is no server to dynamically serve the sitemap file, we can use Node.js to statically generate an xml sitemap file from blog post data. In this example we will use [TypeScript](https://www.typescriptlang.org/) along with the [xml npm package](https://www.npmjs.com/package/xml) to convert a JSON object containing blog post data into an xml string, and then write the generated xml string to a sitemap file. Before following these steps make sure to have [Node.js](https://nodejs.org/en/) and [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) installed.
@@ -136,9 +137,9 @@ const indexItem = {
         Math.max.apply(
           null,
           pages.map((page) => {
-            return (new Date(
+            return new Date(
               page.lastModified ?? page.created
-            ) as unknown) as number;
+            ) as unknown as number;
           })
         )
       )
@@ -292,9 +293,9 @@ async function main() {
           Math.max.apply(
             null,
             pages.map((page) => {
-              return (new Date(
+              return new Date(
                 page.lastModified ?? page.created
-              ) as unknown) as number;
+              ) as unknown as number;
             })
           )
         )
