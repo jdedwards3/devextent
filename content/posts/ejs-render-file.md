@@ -7,7 +7,7 @@ tags:
   - EJS
   - Node.js
   - TypeScript
-image: ejs-render-file.png
+image: ejs-render-file-2.png
 imageAlt: Render an EJS template file into HTML with Node.js
 ---
 
