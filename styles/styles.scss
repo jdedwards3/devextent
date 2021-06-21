@@ -118,7 +118,6 @@ body {
       }
     }
     .title {
-      border-bottom: 1px solid lightgray;
       padding-left: 15px;
       @media (min-width: $breakpoint) {
         padding-left: 0;
@@ -433,12 +432,22 @@ img {
   &.post-image {
     display: flex;
     border-radius: 10px;
+    border: none;
+    border-top: 1px solid lightgray;
     &.post-index {
       max-width: 100%;
       margin: 0;
+      border: none;
+      border-bottom: 1px solid lightgray;
+      @media (min-width: $breakpoint) {
+        border: 1px solid lightgray;
+        border-bottom: none;
+      }
     }
     border-radius: 0;
     @media (min-width: $breakpoint) {
+      border: 1px solid lightgray;
+      border-bottom: none;
       border-top-left-radius: 10px;
       border-top-right-radius: 10px;
     }
