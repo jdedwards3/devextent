@@ -6,6 +6,7 @@ guid: 6381b596-958b-4a9f-b1a7-862d250d4831
 tags:
   - Node.js
   - TypeScript
+image: split-typescript-array-into-chunks.png
 ---
 
 Running too many asynchronous processes simultaneously with Node.js can cause issues that will lead to the process crashing. An example of this is when reading files inside of an asynchronous callback function that is being executed using the [map() method](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) on an array. To prevent a scenario where the node.js process might crash with an [EMFILE error](https://nodejs.org/api/errors.html#errors_common_system_errors), it can be helpful to split an array into smaller arrays or chunks, and process the group of smaller arrays synchronously while asynchronously mapping over the items in each of the smaller arrays. By doing this the contents of the original array can be processed in batches, preventing an error caused by opening too many files at once in parallel. The following configuration will allow us to demonstrate the EMFILE error and then add code to split an array into chunks, batching the process, and preventing the error from occurring.
