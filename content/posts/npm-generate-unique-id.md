@@ -5,6 +5,7 @@ tags:
   - Node.js
 author: James Edwards
 guid: f9ef09ec-a828-4d34-b3ff-5b9dc9f7208f
+image: npm-generate-unique-id.png
 ---
 
 The uuid, or universally unique identifier, npm package is a secure way to generate cryptographically strong unique identifiers with Node.js that doesn't require a large amount of code. The [uuid npm package](https://www.npmjs.com/package/uuid) has zero dependencies, and over thirty thousand packages depend on it, making it a safe choice when an id is needed that is guaranteed to be unique. It supports commonJS modules and also [ECMAScript Modules](https://nodejs.org/api/esm.html), making it a good cross-platform choice. Besides generating a unique id, the uuid npm package has other utility methods available in its API that can be useful when working with unique identifiers, to ensure that they are valid.
