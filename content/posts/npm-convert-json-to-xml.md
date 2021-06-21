@@ -7,6 +7,7 @@ tags:
   - Node.js
   - TypeScript
 guid: f18bff00-3043-4cce-87e0-5bbada10744a
+image: npm-convert-json-to-xml.png
 ---
 
 [XML](https://en.wikipedia.org/wiki/XML) is a textual data format that is standardized, and as a result is widely used throughout a variety of systems. Two common usages are for website [sitemaps](https://developers.google.com/search/docs/advanced/sitemaps/overview) and [RSS](https://en.wikipedia.org/wiki/RSS) feeds, both of which can use XML as the document format. Other usages of XML can include [RESTful HTTP API endpoints](https://en.wikipedia.org/wiki/Representational_state_transfer), both receiving and returning XML requests and responses. This post will include the steps to convert JSON to XML with the [XML npm package](https://www.npmjs.com/package/xml). First we will read a [JSON](https://en.wikipedia.org/wiki/JSON) file, convert the JSON object to an XML string, and then write the XML string to a file. Besides reading and writing files, the XML npm package can be used in other scenarios, where no files are involved as long as incoming data format is JSON and the desired data output format is an XML string.
