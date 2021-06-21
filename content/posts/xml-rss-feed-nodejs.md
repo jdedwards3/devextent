@@ -7,6 +7,7 @@ tags:
   - Node.js
   - TypeScript
   - XML
+image: xml-rss-feed-nodejs.png
 ---
 
 An [RSS](https://en.wikipedia.org/wiki/RSS) feed is a convenient way to allow access to syndicated content in a standardized format that is easily shareable and discoverable. Recently I've been using [feedly](https://feedly.com/) to stay up to date with a variety of web development blogs. This got me interested in how to add an rss feed to a static website built with the [Jamstack](https://jamstack.org/), specifically how to generate an rss feed from blog post data with node.js and [TypeScript](https://www.typescriptlang.org/).
