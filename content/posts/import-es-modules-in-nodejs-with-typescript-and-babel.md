@@ -8,6 +8,7 @@ tags:
   - Babel
   - ES Modules
 guid: e9753917-e598-424e-8b9c-088ec64d5565
+image: import-es-modules-in-nodejs-with-typescript-and-babel.png
 ---
 
 As of Node.js version 13.2.0 ECMAScript modules are now supported by default without adding an experimental flag. Although, using ES Modules without making the required configuration changes will result in the error "SyntaxError: Cannot use import statement outside a module". This is because Node.js, by default, is expecting the [CommonJS module](https://nodejs.org/docs/latest/api/modules.html) format.
