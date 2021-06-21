@@ -6,7 +6,7 @@ author: James Edwards
 tags:
   - Node.js
   - SASS
-image: npm-compile-sass.png
+image: npm-compile-sass-2.png
 imageAlt: Compile SCSS into CSS
 ---
 
