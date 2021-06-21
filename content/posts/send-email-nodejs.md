@@ -7,7 +7,7 @@ tags:
   - Node.js
   - Serverless
   - TypeScript
-image: send-email-nodejs.png
+image: send-email-nodejs-2.png
 imageAlt: Send email with Node.js using the SendGrid npm package
 ---
 
