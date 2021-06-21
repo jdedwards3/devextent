@@ -6,6 +6,7 @@ tags:
   - CI/CD
   - Git
 guid: 9f269f3f-5eeb-443a-b378-df31830c7267
+image: github-actions-jamstack-deployment-to-azure-blob-storage.png
 ---
 
 [GitHub Actions](https://github.com/features/actions) are included with Github Repositories and can be used to automate project workflows like building and deploying code. In this example we will see how to automate the build process and deployment of a site built with the [Jamstack](https://jamstack.org/). We can use GitHub Actions to checkout a specific branch in a git repository, and then execute a build process that is common to Jamstack sites that are created with a static site generator like [Next.js](https://nextjs.org/) or [Eleventy](https://www.11ty.dev/). On completion of the static site generator build process, the static site folder will then be uploaded to [Azure Blob Storage](https://azure.microsoft.com/en-us/services/storage/blobs/), utilizing the [static website hosting](https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blob-static-website-how-to?tabs=azure-portal) feature included with Azure Blob Storage.
