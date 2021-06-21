@@ -6,7 +6,7 @@ author: James Edwards
 tags:
   - TypeScript
   - Web API
-image: fetch-api-post-formdata-object.png
+image: fetch-api-post-formdata-object-2.png
 imageAlt: Submit FormData with ES6 Fetch API
 ---
 
