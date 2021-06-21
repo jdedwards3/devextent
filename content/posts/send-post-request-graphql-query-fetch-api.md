@@ -6,6 +6,7 @@ tags:
   - Web API
   - GraphQL
 guid: a1fb9cdc-8fac-4b58-8493-e34a490915eb
+image: send-post-request-graphql-query-fetch-api.png
 ---
 
 [GraphQL](https://github.com/graphql/graphql-spec) is a query language specification that is used for Web APIs to permit the use of API clients to create data queries. The queries can be specific to the client, and they are sent to a GraphQL server that is able to return exactly the data that was requested. A single GraphQL [POST](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/POST) request can be used to obtain all of the data that is needed for the current context. This is in contrast to [RESTful APIs](https://en.wikipedia.org/wiki/Representational_state_transfer), that might result in a chain or waterfall of requests, with each request requiring data from the previous, in order to retrieve all of the data from the API server.
