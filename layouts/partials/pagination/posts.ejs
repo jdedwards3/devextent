@@ -4,13 +4,15 @@
   <li class="post-list-item">
     <!-- image -->
     <% if (post.image && model.guid && !model.pagination.first) { %>
-    <img
-      height="350"
-      width="927"
-      class="post-image post-index"
-      alt="<%= post.imageAlt %>"
-      src="/images/<%= post.image %>"
-    />
+    <div class="post-list-item-image">
+      <img
+        height="350"
+        width="927"
+        class="post-image post-index"s
+        alt="<%= post.imageAlt %>"
+        src="/images/<%= post.image %>"
+      />
+    </div>
     <% } %>
     <!-- end image -->
     <div
