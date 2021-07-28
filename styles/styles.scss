@@ -408,7 +408,9 @@ body {
   .aside-inner-container {
     margin: 15px auto 15px auto;
     @media (max-width: 799px) {
-      display: none;
+      &.hide-sm {
+        display: none;
+      }
     }
     .aside-inner {
       padding: 0 15px 15px 15px;
@@ -417,7 +419,12 @@ body {
         text-align: center;
         color: #020202;
       }
-      background-color: #f69225;
+      background-color: #fff;
+      max-width: 330px;
+      &.orange-bg {
+        background-color: #f69225;
+      }
+
       border-radius: 10px;
       .adsbygoogle {
         display: block;
@@ -589,22 +596,11 @@ kbd {
   width: 1px;
 }
 
-.sidebar-image-wrapper {
-  text-align: center;
-  margin-bottom: 10px;
-  a {
-    display: inline-block;
-    border: 1px solid lightgray;
-    border-radius: 5px;
-    padding: 10px 10px 0 10px;
-  }
-  svg {
-    max-width: 100%;
-    height: auto;
-    max-height: 100px;
-    width: auto;
-    margin: 0 auto;
-  }
+.sidebar-image-square {
+  display: block;
+  height: 250px;
+  width: 300px;
+  margin: 0 auto;
 }
 
 .edit-post-line {
@@ -633,6 +629,7 @@ ul {
 
 form {
   input {
+    max-width: 350px;
     margin-bottom: 10px;
     &:not([type="submit"]) {
       width: 100%;
