@@ -27,7 +27,7 @@
     name="robots"
     content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
   />
-  <% if (model.tags) { %>
+  <% if (model.tags || model.slug.startsWith('jobs')) { %>
   <script
     async
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
