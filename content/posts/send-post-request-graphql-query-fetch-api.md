@@ -28,6 +28,7 @@ First, create an HTML file that will link to a JavaScript file containing the co
   <body>
     <div id="data-container">
       <p>no data yet!</p>
+      <button id="data-button">Get Data</button>
     </div>
     <script src="/script.js"></script>
   </body>
