@@ -406,7 +406,7 @@ body {
   }
 
   .aside-inner-container {
-    margin: 15px auto 15px auto;
+    margin: 0 auto 15px auto;
     @media (max-width: 799px) {
       &.hide-sm {
         display: none;
