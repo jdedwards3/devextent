@@ -1,19 +1,4 @@
 <div id="sidebar">
-  <% if (model.tags || model.slug.startsWith('jobs')) { %>
-  <div class="aside-inner-container hide-sm">
-    <div class="aside-inner orange-bg ad-sidebar">
-      <p class="help-text">advertisement</p>
-      <ins
-        class="adsbygoogle"
-        data-ad-client="ca-pub-6747903070938911"
-        data-ad-slot="4784056619"
-      ></ins>
-      <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
-    </div>
-  </div>
-  <% } %>
   <div class="sidebar-inner">
     <p>Get updates from Dev Extent</p>
     <form
@@ -54,6 +39,21 @@
       </div>
     </form>
   </div>
+  <% if (model.tags) { %>
+  <div class="aside-inner-container hide-sm">
+    <div class="aside-inner orange-bg ad-sidebar">
+      <p class="help-text">advertisement</p>
+      <ins
+        class="adsbygoogle"
+        data-ad-client="ca-pub-6747903070938911"
+        data-ad-slot="4784056619"
+      ></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+  </div>
+  <% } %>
   <div class="sidebar-inner">
     <form
       id="search-form"
