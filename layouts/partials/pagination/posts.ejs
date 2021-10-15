@@ -43,9 +43,8 @@
         <% } %>
 
         <span>
-          <% if (post.createdDate == post.modifiedDate) { %>
-          <span>Published: <%= new Date(post.createdDate).toLocaleDateString()%></span>
-          <% } else { %>
+          <span>Published: <%= new Date(post.createdDate).toLocaleDateString() %></span>
+          <% if (post.createdDate !== post.modifiedDate) { %>
           <span>Updated: <%= new Date(post.modifiedDate).toLocaleDateString() %></span>
           <% } %>
         </span>
@@ -101,10 +100,9 @@
         <% } %>
 
         <span>
-          <% if (post.createdDate == post.modifiedDate) { %>
           <span>Published: <%= new Date(post.createdDate).toLocaleDateString()%></span>
-          <% } else { %>
-          <span>Updated: <%= new Date(post.modifiedDate).toLocaleDateString() %></span>
+          <% if (post.createdDate !== post.modifiedDate) { %>
+            <span>Updated: <%= new Date(post.modifiedDate).toLocaleDateString() %></span>
           <% } %>
         </span>
       </p>
@@ -182,10 +180,9 @@
           <% } %>
   
           <span>
-            <% if (post.createdDate == post.modifiedDate) { %>
             <span>Published: <%= new Date(post.createdDate).toLocaleDateString()%></span>
-            <% } else { %>
-            <span>Updated: <%= new Date(post.modifiedDate).toLocaleDateString() %></span>
+            <% if (post.createdDate !== post.modifiedDate) { %>
+              <span>Updated: <%= new Date(post.modifiedDate).toLocaleDateString() %></span>
             <% } %>
           </span>
         </p>
