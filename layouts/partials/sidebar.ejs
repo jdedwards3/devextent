@@ -1,6 +1,6 @@
 <div id="sidebar">
   <div class="sidebar-inner">
-    <p>Get updates from Dev Extent</p>
+    <h3>Get updates from Dev Extent</h3>
     <form
       action="https://devextent.us4.list-manage.com/subscribe/post?u=cea6aedcb070461640487756a&amp;id=daf01c194f"
       method="post"
@@ -10,13 +10,14 @@
       target="_blank"
       novalidate
     >
+      <label for="mce-EMAIL">email address</label>
+
       <input
         type="email"
         value=""
         name="EMAIL"
         class="email"
         id="mce-EMAIL"
-        placeholder="email address"
         required
       />
 
@@ -55,6 +56,7 @@
   </div>
   <% } %>
   <div class="sidebar-inner">
+    <h3>Search articles</h3>
     <form
       id="search-form"
       action="https://www.google.com/search"
@@ -67,15 +69,31 @@
         id="q"
         value="site:<%= config.environment.domain %>"
       />
-      <label for="search-str">Search Articles</label>
+      <label for="search-str">search</label>
       <input type="text" name="q" id="search-str" />
       <button type="submit" class="submit">Search</button>
     </form>
-
+  </div>
+  <% if (model.tags) { %>
+  <div class="aside-inner-container hide-sm">
+    <div class="aside-inner orange-bg ad-sidebar">
+      <p class="help-text">advertisement</p>
+      <ins
+        class="adsbygoogle"
+        data-ad-client="ca-pub-6747903070938911"
+        data-ad-slot="4784056619"
+      ></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+  </div>
+  <% } %>
+  <div class="sidebar-inner">
     <!-- tags -->
     <% if (model.archives['tags']) { %>
     <div class="tag-list-container">
-      <h3>All Tags:</h3>
+      <h3>Tags:</h3>
       <ul class="tag-list">
         <% model.archives['tags'].forEach(function(tagData) { %>
         <li>
@@ -86,4 +104,19 @@
     </div>
     <% } %>
   </div>
+  <% if (model.tags) { %>
+  <div class="aside-inner-container hide-sm">
+    <div class="aside-inner orange-bg ad-sidebar">
+      <p class="help-text">advertisement</p>
+      <ins
+        class="adsbygoogle"
+        data-ad-client="ca-pub-6747903070938911"
+        data-ad-slot="4784056619"
+      ></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+  </div>
+  <% } %>
 </div>
