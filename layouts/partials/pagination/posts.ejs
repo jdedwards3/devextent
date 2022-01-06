@@ -213,81 +213,10 @@
     <% }); %>
   </ul>
 <% } %>
-
+<!--  -->
 <% if (model.pagination.last || model.pagination.first) { %>
-  <ul id="pagination-links">
-    <% if (model.pagination.previous) { %>
-    <li>
-      <a class="newer" href="<%=`/${model.pagination.previous.slug}/` %>"
-        >Newer
-      </a>
-    </li>
-    <% } %>
     <!--  -->
-    <% if (model.pagination.first) { %>
-    <!--  -->
-    <% if (!model.pagination.previous) { %>
-    <li>
-      <a class="newer" href="<%= `/${model.pagination.first.slug ? model.pagination.first.slug + "/": model.pagination.first.slug}` %>">Newer</a>
-    </li>
-    <% } %>
-    <li>
-      <a href="<%=`/${model.pagination.first.slug ? model.pagination.first.slug + "/" : model.pagination.first.slug}` %>"
-        ><%= model.pagination.first.number %></a
-      >
-      <% if (model.pagination.previous && model.pagination.previous.number - model.pagination.first.number > 1){ %>
-        ...
-      <% } %>
-    </li>
-    <% } %>
-    <!--  -->
-    <% if (model.pagination.previous) { %>
-    <li>
-      <a href="<%=`/${model.pagination.previous.slug ? model.pagination.previous.slug + "/" : model.pagination.previous.slug}` %>"
-        ><%= model.pagination.previous.number %>
-      </a>
-    </li>
-    <% } %>
-    <!--  -->
-    <% if (model.pagination.current) { %>
-    <li class="current">
-      <a href="<%= `/${model.pagination.current.slug ? model.pagination.current.slug + "/" : model.pagination.current.slug}` %>">
-        <%= model.pagination.current.number %></a
-      >
-    </li>
-    <% } %>
-    <!--  -->
-    <% if (model.pagination.next) { %>
-    <li>
-      <a href="<%= `/${model.pagination.next.slug ? model.pagination.next.slug + "/" : model.pagination.next.slug}` %>">
-        <%= model.pagination.next.number %></a
-      >
-    </li>
-    <% } %>
-    <!--  -->
-    <% if (model.pagination.last) { %>
-    <li>
-      <% if (model.pagination.next && model.pagination.last.number - model.pagination.next.number > 1) { %>
-        ...
-      <% } %>
-      <a href="<%= `/${model.pagination.last.slug ? model.pagination.last.slug + "/" : model.pagination.last.slug}` %>">
-        <%= model.pagination.last.number %></a
-      >
-    </li>
-    <% if (!model.pagination.next) { %>
-    <li>
-      <a class="older" href="<%= `/${model.pagination.last.slug ? model.pagination.last.slug + "/" : model.pagination.last.slug}` %>">Older</a>
-    </li>
-    <% } %>
+<%- include(config.folders.layouts.path +
+'/partials/pagination/pagination-links'); -%>
     <!--  -->
     <% } %>
-    <!--  -->
-    <% if (model.pagination.next) { %>
-    <li>
-      <a class="older" href="<%= `/${model.pagination.next.slug ? model.pagination.next.slug + '/' : model.pagination.next.slug}` %>">Older</a>
-    </li>
-    <% } %>
-    <!--  -->
-  </ul>
-<% } %>
-
