@@ -3,13 +3,8 @@
   "siteDescription": "JavaScript and Web Development Articles",
   "version": "1.2.0",
   "saveContentGuid": { "enabled": true },
-  "typescript": { "enabled": true },
-  "sass": { "enabled": true },
-  "folders": {
-    "images": { "copyToOutput": true },
-    "scripts": { "cacheBust": true },
-    "styles": { "cacheBust": true }
-  },
+  "typescript": { "enabled": true, "versionOutputFolderPath": true },
+  "sass": { "enabled": true, "versionOutputFolderPath": true },
   "environment": {
     "dev": {
       "domain": "http://localhost:3000"
