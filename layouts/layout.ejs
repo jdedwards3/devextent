@@ -23,16 +23,7 @@
           <!-- content -->
           <% if (model.title && model.guid) { %>
           <div
-            class="
-              article-content-wrapper
-              <%=
-              model.image
-              ?
-              'has-image'
-              :
-              ''
-              %>
-            "
+            class="article-content-wrapper <%= model.image ? 'has-image' : '' %>"
           >
             <% } %>
             <!-- title -->
@@ -85,9 +76,6 @@
       </footer>
     </div>
     <%- model.serviceWorkerRegistration %>
-    <script
-      type="module"
-      src="/scripts/<%= config.version %>/script.js"
-    ></script>
+    <script type="module" src="/js/<%= config.version %>/index.js"></script>
   </body>
 </html>

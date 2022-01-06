@@ -1,5 +1,7 @@
 <% if (model.pagination.current.number == 1 && model.guid) { %>
-<ul class="post-list featured <%= model.guid && model.pagination.current.number < 2 ? 'home' : '' %>">
+<ul
+  class="post-list featured <%= model.guid && model.pagination.current.number < 2 ? 'home' : '' %>"
+>
   <% model.pagination.pageData.slice(0,1).forEach(function(post, index) { %>
   <li class="post-list-item">
     <!-- image -->
@@ -8,7 +10,8 @@
       <img
         height="350"
         width="927"
-        class="post-image post-index"s
+        class="post-image post-index"
+        s
         alt="<%= post.imageAlt %>"
         src="/images/<%= post.image %>"
       />
@@ -43,9 +46,15 @@
         <% } %>
 
         <span>
-          <span>Published: <%= new Date(post.createdDate).toLocaleDateString() %></span>
+          <span
+            >Published: <%= new Date(post.createdDate).toLocaleDateString()
+            %></span
+          >
           <% if (post.createdDate !== post.modifiedDate) { %>
-          <span>Updated: <%= new Date(post.modifiedDate).toLocaleDateString() %></span>
+          <span
+            >Updated: <%= new Date(post.modifiedDate).toLocaleDateString()
+            %></span
+          >
           <% } %>
         </span>
       </p>
@@ -78,7 +87,9 @@
 
 <h2 class="visually-hidden">Main Content</h2>
 
-<ul class="post-list <%= model.guid && model.pagination.current.number < 2 ? 'home' : '' %>">
+<ul
+  class="post-list <%= model.guid && model.pagination.current.number < 2 ? 'home' : '' %>"
+>
   <% model.pagination.pageData.slice(1).forEach(function(post, index) { %>
   <li class="post-list-item">
     <div
@@ -100,9 +111,15 @@
         <% } %>
 
         <span>
-          <span>Published: <%= new Date(post.createdDate).toLocaleDateString()%></span>
+          <span
+            >Published: <%= new
+            Date(post.createdDate).toLocaleDateString()%></span
+          >
           <% if (post.createdDate !== post.modifiedDate) { %>
-            <span>Updated: <%= new Date(post.modifiedDate).toLocaleDateString() %></span>
+          <span
+            >Updated: <%= new Date(post.modifiedDate).toLocaleDateString()
+            %></span
+          >
           <% } %>
         </span>
       </p>
@@ -135,88 +152,96 @@
 
 <% } else { %>
 
-  <ul class="post-list <%= model.guid && model.pagination.current.number < 2 ? 'home' : '' %>">
-    <% model.pagination.pageData.forEach(function(post, index) { %>
-     
-    <li class="post-list-item">
-      <% if (index < 1) { %>
-      <!-- image -->
-      <% if (post.image && model.guid && !model.pagination.first) { %>
-      <img
-        height="350"
-        width="927"
-        class="post-image post-index"
-        alt="<%= post.imageAlt %>"
-        src="/images/<%= post.image %>"
-      />
+<ul
+  class="post-list <%= model.guid && model.pagination.current.number < 2 ? 'home' : '' %>"
+>
+  <% model.pagination.pageData.forEach(function(post, index) { %>
+
+  <li class="post-list-item">
+    <% if (index < 1) { %>
+    <!-- image -->
+    <% if (post.image && model.guid && !model.pagination.first) { %>
+    <img
+      height="350"
+      width="927"
+      class="post-image post-index"
+      alt="<%= post.imageAlt %>"
+      src="/images/<%= post.image %>"
+    />
+    <% } %>
+    <!-- end image -->
+    <% } %>
+    <div
+      class="post-list-item-content <%= model.guid && !post.image ? 'rounded' : '' %>"
+    >
+      <!-- title -->
+      <% if (index < 1 ) { %>
+      <!-- main index -->
+      <% if (model.guid && !model.pagination.first) { %>
+      <h1><a href="/<%= post.slug %>/"><%= post.title %></a></h1>
+      <% } else { %>
+      <a href="/<%= post.slug %>/"><h3><%= post.title %></h3></a>
       <% } %>
-      <!-- end image -->
+      <!-- end if guid -->
+      <% } else { %>
+      <a href="/<%= post.slug %>/"><h3><%= post.title %></h3></a>
       <% } %>
-      <div
-        class="post-list-item-content <%= model.guid && !post.image ? 'rounded' : '' %>"
-      >
-        <!-- title -->
-        <% if (index < 1 ) { %>
-        <!-- main index -->
-        <% if (model.guid && !model.pagination.first) { %>
-        <h1><a href="/<%= post.slug %>/"><%= post.title %></a></h1>
-        <% } else { %>
-        <a href="/<%= post.slug %>/"><h3><%= post.title %></h3></a>
+
+      <p class="post-meta">
+        <% if (post.author && model.archives['author']) { %>
+        <span>
+          Author:
+          <a
+            href="/<%= model.archives['author'].find(item => item.name == post.author).slug %>/"
+            ><%= post.author %></a
+          >
+        </span>
         <% } %>
-        <!-- end if guid -->
-        <% } else { %>
-        <a href="/<%= post.slug %>/"><h3><%= post.title %></h3></a>
-        <% } %>
-  
-        <p class="post-meta">
-          <% if (post.author && model.archives['author']) { %>
-          <span>
-            Author:
-            <a
-              href="/<%= model.archives['author'].find(item => item.name == post.author).slug %>/"
-              ><%= post.author %></a
-            >
-          </span>
+
+        <span>
+          <span
+            >Published: <%= new
+            Date(post.createdDate).toLocaleDateString()%></span
+          >
+          <% if (post.createdDate !== post.modifiedDate) { %>
+          <span
+            >Updated: <%= new Date(post.modifiedDate).toLocaleDateString()
+            %></span
+          >
           <% } %>
-  
-          <span>
-            <span>Published: <%= new Date(post.createdDate).toLocaleDateString()%></span>
-            <% if (post.createdDate !== post.modifiedDate) { %>
-              <span>Updated: <%= new Date(post.modifiedDate).toLocaleDateString() %></span>
-            <% } %>
-          </span>
-        </p>
-  
-        <% if (post.metaDescription) { %>
-        <p><%= post.metaDescription %></p>
-        <% } %>
-  
-        <!-- post tags -->
-        <% if (post.tags && model.archives['tags']) { %>
-        <div class="tag-list-container">
-          <span>Tags:</span>
-          <ul class="tag-list">
-            <% post.tags.forEach(function(tag) { %>
-            <li>
-              <a
-                href="/<%= model.archives['tags'].find(item => item.name == tag).slug %>/"
-                ><%= tag %></a
-              >
-            </li>
-            <!-- end tags -->
-            <% }); %>
-          </ul>
-        </div>
-        <% } %>
+        </span>
+      </p>
+
+      <% if (post.metaDescription) { %>
+      <p><%= post.metaDescription %></p>
+      <% } %>
+
+      <!-- post tags -->
+      <% if (post.tags && model.archives['tags']) { %>
+      <div class="tag-list-container">
+        <span>Tags:</span>
+        <ul class="tag-list">
+          <% post.tags.forEach(function(tag) { %>
+          <li>
+            <a
+              href="/<%= model.archives['tags'].find(item => item.name == tag).slug %>/"
+              ><%= tag %></a
+            >
+          </li>
+          <!-- end tags -->
+          <% }); %>
+        </ul>
       </div>
-    </li>
-    <% }); %>
-  </ul>
+      <% } %>
+    </div>
+  </li>
+  <% }); %>
+</ul>
 <% } %>
 <!--  -->
 <% if (model.pagination.last || model.pagination.first) { %>
-    <!--  -->
+<!--  -->
 <%- include(config.folders.layouts.path +
 '/partials/pagination/pagination-links'); -%>
-    <!--  -->
-    <% } %>
+<!--  -->
+<% } %>
