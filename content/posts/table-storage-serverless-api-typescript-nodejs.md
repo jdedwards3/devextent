@@ -189,7 +189,7 @@ const entityData = {
   RowKey: entityGenerator.String(uuidv4()),
   firstName: entityGenerator.String(body.firstName),
   lastName: entityGenerator.String(body.lastName),
-  age: entityGenerator.Int32(body.age),
+  age: entityGenerator.Int32(Number(body.age)),
 };
 
 try {
@@ -391,7 +391,7 @@ const entityData = {
   RowKey: entityGenerator.String(body.rowKey),
   firstName: entityGenerator.String(body.firstName),
   lastName: entityGenerator.String(body.lastName),
-  age: entityGenerator.Int32(body.age),
+  age: entityGenerator.Int32(Number(body.age)),
 };
 
 try {
@@ -613,7 +613,7 @@ const httpTrigger: AzureFunction = async function (
       RowKey: entityGenerator.String(uuidv4()),
       firstName: entityGenerator.String(body.firstName),
       lastName: entityGenerator.String(body.lastName),
-      age: entityGenerator.Int32(body.age),
+      age: entityGenerator.Int32(Number(body.age)),
     };
 
     try {
@@ -672,7 +672,7 @@ const httpTrigger: AzureFunction = async function (
       RowKey: entityGenerator.String(body.rowKey),
       firstName: entityGenerator.String(body.firstName),
       lastName: entityGenerator.String(body.lastName),
-      age: entityGenerator.Int32(body.age),
+      age: entityGenerator.Int32(Number(body.age)),
     };
 
     try {
